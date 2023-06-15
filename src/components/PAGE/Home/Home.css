@@ -1,0 +1,175 @@
+*{
+    padding: 0;
+    margin: 0;
+    height: max-content;
+}
+.item-center{
+    justify-content: center;
+
+}
+.align-center{
+    display: flex;
+    align-items: center;
+}
+.flex{
+    display: flex;
+}
+.content1{
+    height: 450px;
+    /* background-color: aqua; */
+    
+    display: flex;
+}
+.side{
+    width: 50%;
+    height: 99%;
+    margin: 1px ;
+    list-style-type: none;
+    
+}
+.sideLeft1{
+    width: 400px;
+    /* background-color: aqua; */
+    height: 200px;
+    margin-left:40px ;
+
+}
+.sideLeft1-cover{
+
+}
+.sideLeft1-text{
+    font-size: 50px;
+    
+}
+.sideRight1{
+    background-color: burlywood;
+    
+}
+.content2{
+    height: 350px;
+    /* background-color: aqua; */
+     display: flex;
+}
+.side-content2{
+    height: 175px;
+}
+.sideLeft2{
+    width: 220px;
+    height: 170px;
+    margin-left: 3px;
+    background-color: bisque;
+
+}
+.sideRight2{
+    width: 350px;
+    height: 220px;
+    justify-content: center;
+    /* background-color: aqua; */
+    /* margin-left: 60px; */
+}
+.test{
+    text-align: center;
+}
+.content3{
+    height: 450px;
+    display: flex;
+}
+.sideLeft3{
+    width: 350px;
+}
+.sideLeft3-text{
+    height: max-content;
+    
+}
+.sideLeft3-title{
+    
+    
+}
+
+.button-content3{
+    margin-top: 20px;
+    margin-right: 20px;
+    width: 100px;
+    height: 30px;
+}
+.black{
+    background-color: black;
+    color: white;
+}
+.brown{
+    background-color: burlywood;
+    border-color:bisque ;
+}
+.content4{
+    height: 650px;
+    
+}
+.service{
+    height: 250px;
+    padding-top: 60px;
+    font-size: 70px;
+}
+.ourService{
+   
+    display: flex;
+    justify-content: center;
+    
+}
+.serviceBox{
+    width: 25%;
+    height: 250px;
+    margin: 5px;
+    background-color: bisque;
+}
+
+.content5{
+    height: 500px;
+    display: flex;
+    align-items: center;
+    background-color: bisque;
+    padding-top: 60px;
+}
+.imgContent5{
+    height: 300px;
+    background-color: burlywood;
+    width: 50%;
+    
+}
+.descContent5{
+    height: 300px;
+    width: 50%;
+}
+.box-text5{
+    width: 300px;
+}
+.button-content5{
+    width: 120px;
+    height: 30px;
+    border: 0;
+    background-color: aliceblue;
+    color: chocolate;
+}
+.font-brown{
+    color: chocolate;
+}
+.size1{
+    font-size: 30px;
+}
+.size2{
+    font-size: 50px;
+}
+.content6{
+    height: 400px;
+    
+   
+}
+.question{
+    padding: 3px;
+    height: 50px;
+    text-align: center;
+}
+.buttonClickHere{
+    width: 170px;
+    height: 50px;
+    font-size: 20px;
+}

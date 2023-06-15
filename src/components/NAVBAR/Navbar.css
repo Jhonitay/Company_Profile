@@ -1,0 +1,27 @@
+*{
+    height: 15vh;
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    list-style-type: none;
+    display: flex;
+    justify-content:right ;
+    /* align-items: center; */
+    width: 70%;
+}
+.content{
+    margin: 10px;
+}
+.logo{
+    padding-left: 20px;
+    width: 30%;
+
+    
+}
+.justify-flex{
+    display: flex;
+    align-items: center;
+    padding-top :10px ;
+    background-color: bisque;
+}

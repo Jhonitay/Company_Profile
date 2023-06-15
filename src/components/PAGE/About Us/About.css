@@ -17,24 +17,24 @@
 
 
 .conten1{
-    background-color: aqua;
+    /* background-color: aqua; */
     height: 40vh;
     border: 1px solid white;
 }
 .conten2{
-    background-color: aqua;
+    /* background-color: aqua; */
     height: max-content;
     border: 1px solid white;
     padding: 170px 100px;
 }
 .conten3{
-    background-color: aqua;
+    /* background-color: aqua; */
     height: 30vh;
     border: 1px solid white;
 }
 .conten4{
 
-    background-color: aqua;
+    /* background-color: aqua; */
     height: max-content;
     border: 1px solid white;
     padding: 150px 4px;

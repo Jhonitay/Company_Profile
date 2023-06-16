@@ -1,0 +1,57 @@
+
+belum punya file final_project dari github {
+
+buat 1 folder untuk final project
+masuk ke file, lalukan {
+
+git init
+git remote add origin https://github.com/Jhonitay/Company_Profile.git
+git fetch
+git checkout review (file akan masuk ke folder anda)
+
+membuat branch kerja
+git checkout -b (buat 1 nama branch) !buat nama branch sesuai bagian tugas/fitur yang dikerjakan
+
+selesai. selamat bekerja, pastikan tidak mengubah isi file diluar file tugas kerja yang diberikan
+lanjut ke fase kerja
+  }
+}
+
+
+fase kerja {
+rule:
+ 1. melakukan commit sebnayak apapun 
+ 2.untuk push dilakukan saat ada perintah push
+ 3.jng lupa untuk push menggunakan nama branch kerja
+ 4.jng melakukan perubahan di luar file kerja masing-masing
+
+ !durasi hingga masuk fase push
+}
+
+
+fase push{
+  git status 
+  git add . / git add <nama file yng di sedang kerjakan dan diupdate>
+  git status
+  git commit -m "isi keterangan yang apa yang diupdate"
+  git push origin <nama branch kerja>
+}
+
+
+fase merge{
+ ! saat fase merge,
+ ! diharapkan jangan melakukan update pada file final project
+ ! lanjut ke fase pull
+}
+
+
+fase pull {
+ melakukan pull:
+
+ pull file github
+ git pull origin <nama branch kerja>
+
+ selesai . kembali ke fase push/kerja
+}
+ 
+

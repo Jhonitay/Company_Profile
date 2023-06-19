@@ -5,6 +5,8 @@
 .footer{
     height: max-content;
     background-color: black;
+    width: 100%;
+    
 }
 .phone{
     height: 150px;
@@ -25,11 +27,9 @@
     height: 50px;
     width: 100%;
     /* background-color: aquamarine; */
-    align-items: end;
-
-    justify-content: space-between;
     display: flex;
     color: white;
+    justify-content: space-between;
 }
 .coffie{
     margin-left: 10%;

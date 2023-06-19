@@ -1,0 +1,146 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+}
+.align-center {
+  display: flex;
+  align-items: center;
+}
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+.text-white {
+  color: white;
+}
+
+.segment1 {
+  height: 350px;
+  background-color: cadetblue;
+  margin-bottom: 1px;
+}
+.segment2 {
+  background-color: cadetblue;
+  padding: 20px 0px;
+}
+.segment3 {
+  height: fit-content;
+  background-color: cadetblue;
+  margin-bottom: 1px;
+  padding: 20px 20px;
+  justify-content: space-between;
+}
+.segment4 {
+  height: max-content;
+  background-color: cadetblue;
+  margin-bottom: 1px;
+  padding: 30px;
+  
+  
+}
+
+#search-form {
+  display: flex;
+  justify-content: center;
+  padding: 0px 10px;
+}
+
+#search-input {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 13px;
+  font-size: 16px;
+  width: 100%;
+  margin-right: 3px;
+}
+
+#search-button {
+  padding: 5px 10px;
+  background-color: white;
+  border: none;
+  color: #ccc;
+  border-radius: 12px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.side-product {
+  width: 60%;
+  border: 1px solid black;
+  height: max-content;
+}
+.side-right {
+
+}
+.box-keterangan {
+  
+  width: 30%;
+  
+}
+.spek {
+  margin-bottom: 10px;
+}
+.judul {
+  width: 80px;
+}
+.keterangan {
+  margin-left: 10px;
+}
+.spesifikasi {
+  background-color: white;
+  border: 1px #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  width: auto;
+}
+
+.gambar-product{
+  background-color: white;
+  border: 1px #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  width: auto;
+  height: 300px;
+  margin-top:10px ;
+}
+
+.box{
+  border-radius: 14px;
+  width: 60%;
+  height: max-content;
+  padding: 20px 50px;
+  background-color: aliceblue;
+}
+
+.list{
+  height: max-content;
+  height: 100%;
+  display: flex;
+  padding:20px 0px;
+  border-bottom: 1px solid black;
+}
+.ikon{
+  width: 25%;
+  font-weight: bold;
+  /* background-color: aqua; */
+}
+.namaProduk{
+  width: 40%;
+  font-weight: bold;
+  /* background-color:aquamarine; */
+}
+.jml{
+  width: 15%;
+  font-weight: bold;
+  /* background-color: bisque; */
+}
+.price{
+  width: 20%;
+  font-weight: bold;
+  /* background-color: blueviolet; */
+}

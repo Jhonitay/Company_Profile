@@ -15,7 +15,7 @@ function Footer(){
                 </div>
                 
 
-                <div className='icon'>
+                <div className='ikonn'>
                     <div className='coffie'>
                     coffiee
                     </div>

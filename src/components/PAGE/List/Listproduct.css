@@ -1,0 +1,28 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+.list{
+    height: max-content;
+    height: 100%;
+    display: flex;
+    padding:20px 0px;
+    border-bottom: 1px solid black;
+}
+.icon{
+    width: 25%;
+    /* background-color: aqua; */
+}
+.nama-produk{
+    width: 40%;
+    /* background-color:aquamarine; */
+}
+.jumlah{
+    width: 15%;
+    /* background-color: bisque; */
+}
+.harga{
+    width: 20%;
+    /* background-color: blueviolet; */
+}

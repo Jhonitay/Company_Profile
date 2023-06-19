@@ -1,4 +1,4 @@
-import './Footer.css';
+import "./Footer.css";
 
 function Footer(){
     return (
@@ -15,7 +15,7 @@ function Footer(){
                 </div>
                 
 
-                <div className='icon'>
+                <div className='ikonn'>
                     <div className='coffie'>
                     coffiee
                     </div>

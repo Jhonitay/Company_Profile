@@ -19,6 +19,7 @@ function App() {
           <Route path="/Insight" element={<PageInsight />} />
         </Routes>
       </Router> 
+      
     </>
   );
 }

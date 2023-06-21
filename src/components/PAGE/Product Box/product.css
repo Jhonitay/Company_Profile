@@ -1,0 +1,28 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.product-box {
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: 20px;
+    width: 130px;
+    height: 200px;
+    margin: 6px;
+    display: inline-block;
+  }
+
+  .product-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .product-description {
+    margin-bottom: 10px;
+  }
+
+  .product-price {
+    font-weight: bold;
+    color: #4CAF50;
+  }

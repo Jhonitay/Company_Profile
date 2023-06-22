@@ -7,6 +7,7 @@ function Footer(){
         <p>footer</p>
         <p>footer</p>
         <p>footer</p>
+        <p>footer</p>
         </>
     )
 }

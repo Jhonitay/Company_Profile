@@ -1,0 +1,41 @@
+.team{
+    height: max-content;
+    min-height: 65vh;
+}
+
+.title{
+    text-align: center;
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .team-member {
+    background-color: burlywood;
+    border: 1px solid white;
+    border-radius: 4px;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+  }
+  
+  .team-member h2 {
+    margin-top: 0;
+  }
+  
+  .team-member p {
+    margin-bottom: 0;
+  }
+  
+  .team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }

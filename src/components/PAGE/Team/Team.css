@@ -6,15 +6,6 @@
 .title{
     text-align: center;
 }
-.profile{
-    display: flex;
-    margin-bottom: 15px;
-    margin-left: 10%;
-}
-.img{
-    margin-right: 15px;
-}
-
 
 .team-container {
     display: flex;

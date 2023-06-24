@@ -1,9 +1,12 @@
 import "./Footer.css";
+import React from 'react'
+import { FaFacebook, FaInstagram, FaTwitter, FaWhatsapp} from "react-icons/fa";
 
+// import {FaInstagram, FaTwitter, FaFacebook} from 'react-icons'
 function Footer(){
     return (
         <>
-        <div className='footer'>
+        <footer className='footer'>
             <div>
                 <div className='phone'>
                     <p>
@@ -15,21 +18,24 @@ function Footer(){
                 </div>
                 
 
-                <div className='ikonn'>
+                <div className='bawahan'>
                     <div className='coffie'>
                     coffiee
                     </div>
                     <div className='sosmed'>
+                   <FaFacebook className="icons"/>
+                   <FaInstagram className="icons"/>
+                   <FaTwitter className="icons"/>
+                   <FaWhatsapp className="icons"/>
+                   {/* <img src="" alt="img" />
                    <img src="" alt="img" />
-                   <img src="" alt="img" />
-                   <img src="" alt="img" />
-                   <img src="" alt="img" />
+                   <img src="" alt="img" /> */}
                     </div>
                 </div>
                 
                 
             </div>
-        </div>
+        </footer>
         </>
     )
 }

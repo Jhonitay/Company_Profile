@@ -8,7 +8,7 @@ function Home() {
             {/* content 1 */}
             <div class="side align-center ">
               <div class="sideLeft1 ">
-                <h3 class="sideLeft1-cover">Kopu Gula Aren Mantap kali</h3>
+                <h3 class="sideLeft1-cover">Kopi Gula Aren Mantap kali</h3>
                 <h1 class="sideLeft1-text">TIME DISCOVER COFFE HOUSE</h1>
               </div>
             </div>

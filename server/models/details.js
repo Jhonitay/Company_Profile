@@ -2,9 +2,9 @@
 const { Model } = require("sequelize");
 const { default: Product } = require("../../src/components/PAGE/Product Box/product");
 module.exports = (sequelize, DataTypes) => {
-  class Product extends Model {
+  class Details extends Model {
     static associate(models) {
-      this.Details = this.hasMany(models.Details, {
+      this.Product = this.hasMany(models.Product, {
         foreignKey: {
           name: "Product_id",
           allowNull: false,
@@ -13,35 +13,53 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
   }
-  Product.init(
+  Details.init(
     {
-      product_id: {
+      id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
         allowNull: false,
         unique: true,
-        field: "product_id",
+        field: "id",
       },
-      product_name: {
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
-        field: "product_name",
+        field: "name",
       },
-      harga_satuan: {
-        type: DataTypes.INTEGER,
+      dimensi: {
+        type: DataTypes.STRING,
         allowNull: false,
-        field: "harga_satuan",
+        field: "dimensi",
       },
-    },
+      berat:{
+        type:DataTypes.FLOAT,
+        allowNull:false,
+        defaultValue:"0",
+        field: "berat",
+      },
+      stok:{
+        type:DataTypes.INTEGER,
+          allowNull:true,
+          defaultValue:"1",
+          field: "stok",
+      },
+      jenis:{
+        type:DataTypes.ENUM("makanan","minuman"),
+        allowNull:false,
+        defaultValue,
+        field: "jenis"
+      },
+      },
     {
       sequelize,
-      modelName: "Product",
-      tableName: "product",
+      modelName: "Details",
+      tableName: "details",
       freezeTableName: true,
       timestamps: false,
       underscored: true,
     }
   );
-  return Product;
+  return Details;
 };

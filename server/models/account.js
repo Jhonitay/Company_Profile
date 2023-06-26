@@ -2,27 +2,6 @@
 const { Model } = require("sequelize");
 const joi = require("joi");
 module.exports = (sequelize, DataTypes) => {
-  class Account extends Model {
-    static validate(model) {
-      const schema = joi.object({
-        email: joi.string().trim().email().required().messages({
-          "string.empty": "Email tidak boleh kosong",
-          "string.email": "Email tidak valid",
-          "any.required": "Email dibutuhkan",
-        }),
-        password: joi.string().min(8).max(30).required().messages({
-          "string.empty": "Password tidak boleh kosong",
-          "string.min": "Password setidaknya 8 karakter",
-          "string.max": "Password maksimal 30 karakter",
-          "any.required": "Password dibutuhkan",
-        }),
-        confirm_password: joi.valid(joi.ref("password")).messages({
-          "any.only": "Password tidak cocok",
-        }),
-      });
-      return schema.validate(model);
-    }
-  }
   Account.init(
     {
       account_id: {

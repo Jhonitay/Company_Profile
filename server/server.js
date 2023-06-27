@@ -1,17 +1,24 @@
-import Express  from "express";
-import db from "./config/database.js";
-import router from "./routes/index.js";
+const express =  require("express");
+const { router } =  require("./routes/index.js");
 
-const app = Express();
+const port = 5000;
 
-try {
-    await db.authenticate();
-    console.log('Database Connected')
-} catch (error) {
-    console.error(error);
-}
+const app = express();
 
-app.use(Express.json);
+// try {
+//     await db.authenticate();
+//     console.log('Database Connected')
+// } catch (error) {
+//     console.error(error);
+// }
+
+app.use(express.json());
+app.get("/", (req, res) => {
+  res.send("Hello World! Hello");
+  console.log("tes")
+});
 app.use(router);
 
-app.listen(5000, ()=> console.log('Server running at'));
+app.listen(port, () => {
+  console.log(port);
+});

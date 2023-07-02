@@ -22,12 +22,6 @@ module.exports = {
         allowNull: false,
         field: "password",
       },
-      created_at: {
-        type: Sequelize.DATE,
-        allowNull: false,
-        field: "created_at",
-        defaultValue: Sequelize.NOW,
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

@@ -1,7 +1,6 @@
 //copy punya zhafar
 
 const { Sequelize, ValidationError } = require("sequelize");
-const bcrypt = require("bcrypt");
 const jsonwebtoken = require("jsonwebtoken");
 const { Account } = require("../models");
 const env = process.env.NODE_ENV || "development";

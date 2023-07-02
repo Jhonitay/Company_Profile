@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "kelompok_dio",
-    "password": "diodio",
+    "username": "Aditya",
+    "password": "6HFR#hLy4qqM4t&",
     "database": "sugeng",
-    "host": "miko.southeastasia.cloudapp.azure.com",
+    "host": "localhost/phpmyadmin",
     "dialect": "mysql"
   },
   "test": {

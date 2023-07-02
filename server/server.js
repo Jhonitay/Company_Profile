@@ -18,6 +18,10 @@ app.get("/", (req, res) => {
   console.log("tes")
 });
 app.use(router);
+app.get("/about", (req, res) => {
+  res.send("Hello World! Hello");
+  console.log("tes")
+});
 
 app.listen(port, () => {
   console.log(port);

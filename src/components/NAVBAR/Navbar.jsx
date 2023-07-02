@@ -16,6 +16,7 @@ function Navbar() {
        <Link class="content" to="/Order" >Order</Link>
        <Link class="content" to="/Contact">Contact</Link>
        <Link class="content" to="/Insight">Insight</Link>
+       <Link class="content" to="/Login">Login</Link>
       </div>
     </div>
     </>

@@ -1,17 +1,19 @@
 * {
-    margin: 0;
-    box-sizing: border-box;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .page {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.cover {
+
+
+.cover1{
     background-color: white;
     width: 30em;
     height: 30em;
@@ -22,11 +24,51 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-
+   
     
 }
+/* h1 {
 
-h1 {
+
+} */
+
+.Sign{
+   
+    
+    height: 200px;
+    width: 80%;
+}
+
+.Sign input{
+    border: none;
+    background-color:rgb(229, 226, 226);
+    height: 50px;
+    width: 100%;
+    border-radius: 50px;
+    text-align: center;
+    display: flex;
+    
+
+}
+
+.Sign-up{
+    border: 1px solid black;
+    width: 40%;
+    height: 48px;
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+
+.Sign-up:hover {
+    transform: scale(1.25);
+}
+/* h1 {
     margin-bottom: 15px;
 }
 .isi {
@@ -87,58 +129,4 @@ h1 {
 .SignUp-btn:hover {
     transform: scale(1.25);
 }
-
-
-/* .Login-btn{
-    border: 1px solid blue;
-    width: 40%;
-    height: 90%;
-    background-color: bisque;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 05s;
-    border-radius: 4px;
-    cursor: pointer;
-    
-}
-
-.SignUp-btn{
-    border: 1px solid blue;
-    width: 40%;
-    height: 90%;
-    background-color: bisque;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 05s;
-    border-radius: 4px;
-    cursor: pointer;
-    
-}
-
-.Login-btn:hover {transform: scale(1.25);}
-
-.Text{
-    
-    height: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-input {
-    border: none;
-    background-color:rgb(229, 226, 226);
-    height: 64px;
-    width: 80%;
-    border-radius: 4px;
-    text-align: center;
-}
-
-input:focus {
-    outline-color: rgb(32, 177, 255);
-
-}   
-
-*/
+ */

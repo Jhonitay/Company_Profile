@@ -20,30 +20,40 @@ module.exports = (sequelize, DataTypes) => {
   }
   Order.init({
     Order_id: {
+      type : DataTypes.UUID,
+      defaultValue : DataTypes.UUIDV4,
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.INTEGER
+      unique : true,
+      field : "order_id",
+      
     },
     Product_id: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
+      field: "product_id",
     },
     Account_id: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
+      field: "account_id",
     },
     Jumlah: {
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      field: "jumlah",
     },
     total: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
+      field: "total",
     },
     createdAt: {
-      allowNull: false,
-      type: Sequelize.DATE
-    },
-    updatedAt: {
-      allowNull: false,
-      type: Sequelize.DATE
+      type: DataTypes.DATE,
+        allowNull: false,
+        field: "created_at",
+        defaultValue: DataTypes.NOW,
     }
   }, {
     sequelize,

@@ -15,33 +15,43 @@ module.exports = (sequelize, DataTypes) => {
   }
   Product.init({
     Product_id: {
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey: true,
-      type: Sequelize.INTEGER
+      type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        primaryKey: true,
+        allowNull: false,
+        unique: true,
+        field: "product_id",
     },
     Name: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
+      field: "name",
     },
     Dimensi: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
+      field: "dimensi",
     },
     Berat: {
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      field: "berat",
     },
     stok: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
+      field: "stock",
     },
     jenis: {
-      type: Sequelize.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
+      field: "jenis",
     },
     createdAt: {
-      allowNull: false,
-      type: Sequelize.DATE
-    },
-    updatedAt: {
-      allowNull: false,
-      type: Sequelize.DATE
+      type: DataTypes.DATE,
+        allowNull: false,
+        field: "created_at",
+        defaultValue: DataTypes.NOW,
     }
   }, {
     sequelize,

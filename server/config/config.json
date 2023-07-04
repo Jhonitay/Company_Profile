@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "Aditya",
-    "password": "6HFR#hLy4qqM4t&",
+    "username": "root",
+    "password": "",
     "database": "sugeng",
-    "host": "localhost/phpmyadmin",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {

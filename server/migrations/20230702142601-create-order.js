@@ -4,30 +4,36 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Orders', {
       Order_id: {
+        type : Sequelize.UUID,
+        defaultValue : Sequelize.UUIDV4,
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        unique : true,
+        field : "order_id",
       },
       Product_id: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
+        field: "product_id",
       },
       Account_id: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
+        field: "account_id",
       },
       Jumlah: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        field: "jumlah",
       },
       total: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
+        field: "total",
       },
       createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+          allowNull: false,
       }
     });
   },

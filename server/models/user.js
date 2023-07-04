@@ -14,10 +14,36 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   User.init({
-    User_id: DataTypes.UUID,
-    First_name: DataTypes.STRING,
-    Last_name: DataTypes.STRING,
-    Username: DataTypes.STRING
+    User_id: {
+      type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        primaryKey: true,
+        allowNull: false,
+        unique: true,
+        field: "user_id",
+    },
+    First_name: {
+      type: DataTypes.STRING,
+        allowNull: false,
+        field: "first_name",
+    },
+    Last_name: {
+      type: DataTypes.STRING,
+        allowNull: false,
+        field: "last_name",
+    },
+    Username: {
+      type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        field: "username",
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+        allowNull: false,
+        field: "created_at",
+        defaultValue: DataTypes.NOW,
+    } 
   }, {
     sequelize,
     modelName: 'User',

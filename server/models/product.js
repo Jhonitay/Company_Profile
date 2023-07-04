@@ -14,12 +14,35 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Product.init({
-    Product_id : DataTypes.INTEGER,
-    Name: DataTypes.STRING,
-    Dimensi: DataTypes.STRING,
-    Berat: DataTypes.INTEGER,
-    stok: DataTypes.STRING,
-    jenis: DataTypes.STRING
+    Product_id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: Sequelize.INTEGER
+    },
+    Name: {
+      type: Sequelize.STRING
+    },
+    Dimensi: {
+      type: Sequelize.STRING
+    },
+    Berat: {
+      type: Sequelize.INTEGER
+    },
+    stok: {
+      type: Sequelize.STRING
+    },
+    jenis: {
+      type: Sequelize.STRING
+    },
+    createdAt: {
+      allowNull: false,
+      type: Sequelize.DATE
+    },
+    updatedAt: {
+      allowNull: false,
+      type: Sequelize.DATE
+    }
   }, {
     sequelize,
     modelName: 'Product',

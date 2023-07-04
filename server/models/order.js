@@ -19,10 +19,32 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Order.init({
-    Product_id: DataTypes.STRING,
-    User_id: DataTypes.STRING,
-    Jumlah: DataTypes.INTEGER,
-    total: DataTypes.STRING
+    Order_id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: Sequelize.INTEGER
+    },
+    Product_id: {
+      type: Sequelize.STRING
+    },
+    Account_id: {
+      type: Sequelize.STRING
+    },
+    Jumlah: {
+      type: Sequelize.INTEGER
+    },
+    total: {
+      type: Sequelize.STRING
+    },
+    createdAt: {
+      allowNull: false,
+      type: Sequelize.DATE
+    },
+    updatedAt: {
+      allowNull: false,
+      type: Sequelize.DATE
+    }
   }, {
     sequelize,
     modelName: 'Order',

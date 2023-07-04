@@ -39,8 +39,6 @@
   background-color: cadetblue;
   margin-bottom: 1px;
   padding: 30px;
-  
-  
 }
 
 #search-form {
@@ -73,14 +71,14 @@
   width: 60%;
   border: 1px solid black;
   height: max-content;
+  display: flex;
+  flex-wrap: wrap;
 }
-.side-right {
 
+.side-right {
 }
 .box-keterangan {
-  
   width: 30%;
-  
 }
 .spek {
   margin-bottom: 10px;
@@ -99,17 +97,17 @@
   width: auto;
 }
 
-.gambar-product{
+.gambar-product {
   background-color: white;
   border: 1px #ccc;
   border-radius: 10px;
   padding: 15px;
   width: auto;
   height: 300px;
-  margin-top:10px ;
+  margin-top: 10px;
 }
 
-.box{
+.box {
   border-radius: 14px;
   width: 60%;
   height: max-content;
@@ -117,30 +115,171 @@
   background-color: aliceblue;
 }
 
-.list{
+.list {
   height: max-content;
   height: 100%;
   display: flex;
-  padding:20px 0px;
+  padding: 20px 0px;
   border-bottom: 1px solid black;
 }
-.ikon{
+.ikon {
   width: 25%;
   font-weight: bold;
   /* background-color: aqua; */
 }
-.namaProduk{
+.namaProduk {
   width: 40%;
   font-weight: bold;
   /* background-color:aquamarine; */
 }
-.jml{
+.jml {
   width: 15%;
   font-weight: bold;
   /* background-color: bisque; */
 }
-.price{
+.price {
   width: 20%;
   font-weight: bold;
   /* background-color: blueviolet; */
+}
+
+#search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.product-title {
+  max-width: 150px; /* Atur lebar maksimum untuk nama produk */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.addcart {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.product-box {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.remove-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-quantity {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  margin: 0 5px;
+}
+
+.move-to-cart-button {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.quantity {
+  margin: 0 5px;
+}
+
+.fl {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+}
+
+.judul {
+  display: flex;
+}
+
+.product-info p {
+  margin-right: 0px;
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-left: 0px;
+}
+
+.remove-button {
+  margin-right: 5px;
+  margin-left: 0px;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.product-box {
+  /* Tambahkan transisi untuk animasi */
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.product-box:nth-child(even) {
+  /* Animasi untuk kotak produk dengan urutan genap (muncul dari kanan) */
+  animation-name: slideInFromRight;
+}
+
+.product-box:nth-child(odd) {
+  /* Animasi untuk kotak produk dengan urutan ganjil (muncul dari kiri) */
+  animation-name: slideInFromLeft;
 }

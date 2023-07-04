@@ -14,9 +14,9 @@ import Home from "../components/PAGE/Home/Home";
 function PageHome() {
   return (
     <>
-    <Navbar/>
-    <Home/>
-    <Footer/>
+      <Navbar />
+      <Home />
+      <Footer />
     </>
   );
 }

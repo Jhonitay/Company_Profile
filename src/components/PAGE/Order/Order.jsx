@@ -5,9 +5,38 @@ import Listproduct from "../List/Listproduct";
 
 function Order() {
   const [selectedProducts, setSelectedProducts] = useState([]);
+  const [selectedProductImages, setSelectedProductImages] = useState([]);
   const [quantities, setQuantities] = useState({});
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+
+  const handleSearch = () => {
+    if (searchTerm.trim() === "") {
+      setSearchResults(productList);
+    } else {
+      const filteredProducts = productList.filter((product) => product.title.toLowerCase().includes(searchTerm.toLowerCase()));
+      setSearchResults(filteredProducts);
+    }
+  };
+
+  const handleButtonClick = () => {
+    handleSearch();
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
+  const selectProduct = (product, image) => {
+    setSelectedProducts([product]);
+    setSelectedProductImages([image]);
+    setQuantities((prevQuantities) => ({
+      ...prevQuantities,
+      [product]: 1,
+    }));
+  };
 
   const removeProduct = (product) => {
     const updatedProducts = selectedProducts.filter((p) => p !== product);
@@ -33,53 +62,25 @@ function Order() {
     }
   };
 
-  const selectProduct = (product) => {
-    setSelectedProducts([product]); // Replace the selected products with the new product
-
-    setQuantities((prevQuantities) => ({
-      ...prevQuantities,
-      [product]: 1,
-    }));
-  };
-
   const productList = [
-    { title: "Appia Life", price: 61000000 },
-    { title: "Product 2", price: 51000000 },
-    { title: "Product 3", price: 61000000 },
-    { title: "Product 4", price: 61000000 },
-    { title: "Product 5", price: 61000000 },
-    { title: "Product 6", price: 61000000 },
-    { title: "Product 7", price: 61000000 },
-    { title: "Product 8", price: 61000000 },
-    { title: "Product 9", price: 61000000 },
-    { title: "Product 10", price: 61000000 },
-    { title: "Product 11", price: 61000000 },
-    { title: "Product 12", price: 61000000 },
-    { title: "Product 13", price: 61000000 },
-    { title: "Product 14", price: 61000000 },
-    { title: "Product 15", price: 61000000 },
-    { title: "Product 16", price: 61000000 },
+    { title: "Appia Life", description: "Description 1", price: 61000000, image: "." },
+    { title: "Product 2", description: "Description 2", price: 10, image: "." },
+    { title: "Product 3", description: "Description 3", price: 61000000, image: "https://example.com/image1.jpg" },
+    { title: "Product 4", description: "Description 4", price: 61000000, image: "https://example.com/image1.jpg" },
+    { title: "Product 5", description: "Description 5", price: 61000000, image: "https://example.com/image1.jpg" },
+    { title: "Product 6", description: "Description 6", price: 61000000, image: "https://example.com/image1.jpg" },
+    { title: "Product 7", description: "Description 7", price: 61000000, image: "https://example.com/image1.jpg" },
+    { title: "Product 8", description: "Description 8", price: 61000000, image: "https://example.com/image1.jpg" },
+    { title: "Product 9", description: "Description 9", price: 61000000, image: "https://example.com/image1.jpg" },
+    { title: "Product 10", description: "Description 10", price: 61000000, image: "https://example.com/image1.jpg" },
+    { title: "Product 11", description: "Description 11", price: 61000000, image: "https://example.com/image1.jpg" },
+    { title: "Product 12", description: "Description 12", price: 61000000, image: "https://example.com/image1.jpg" },
+    { title: "Product 13", description: "Description 13", price: 61000000, image: "https://example.com/image1.jpg" },
+    { title: "Product 14", description: "Description 14", price: 61000000, image: "https://example.com/image1.jpg" },
+    { title: "Product 15", description: "Description 15", price: 61000000, image: "https://example.com/image1.jpg" },
+    { title: "Product 16", description: "Description 16", price: 61000000, image: "https://example.com/image1.jpg" },
     // Tambahkan produk lainnya di sini
   ];
-
-  const handleSearch = () => {
-    if (searchTerm.trim() === "") {
-      setSearchResults(productList);
-    } else {
-      const filteredProducts = productList.filter((product) => product.title.toLowerCase().includes(searchTerm.toLowerCase()));
-      setSearchResults(filteredProducts);
-    }
-  };
-
-  const handleButtonClick = () => {
-    handleSearch();
-  };
-
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      handleSearch();
-    }
-  };
 
   const moveToCart = () => {
     const cartProduct = selectedProducts.map((product) => {
@@ -123,11 +124,15 @@ function Order() {
         <div className="segment3 flex">
           <div className="side-product">
             {searchTerm === "" ? (
-              productList.map((product, index) => <Product key={index} title={product.title} price={`Rp${product.price}`} onAddToSpecification={() => selectProduct(product.title)} />)
+              productList.map((product, index) => (
+                <Product key={index} title={product.title} description={product.description} price={`Rp${product.price}`} onAddToSpecification={() => selectProduct(product.title, product.image)} image={product.image} />
+              ))
             ) : searchResults.length > 0 ? (
-              searchResults.map((product, index) => <Product key={index} title={product.title} price={`Rp${product.price}`} onAddToSpecification={() => selectProduct(product.title)} />)
+              searchResults.map((product, index) => (
+                <Product key={index} title={product.title} description={product.description} price={`Rp${product.price}`} onAddToSpecification={() => selectProduct(product.title, product.image)} image={product.image} />
+              ))
             ) : (
-              <p>No products found</p>
+              <p>Tidak ditemukan produk</p>
             )}
           </div>
           <div className="side-right box-keterangan">
@@ -201,9 +206,11 @@ function Order() {
               )}
             </div>
             <div className="gambar-product">
-              <div>
-                <img src="" alt="img" />
-              </div>
+              {selectedProductImages.map((image, index) => (
+                <div key={index}>
+                  <img src={image} alt="Product" />
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -1,15 +1,24 @@
-import './Listproduct.css'
+import React from "react";
+import "./Listproduct.css";
 
-function Listproduct(){
-    return(
-        <>
-        <div className='list'>
-            <div className='icon'>Gambar</div>
-            <div className='nama-produk'>Nama</div>
-            <div className='jumlah'>Jumlah</div>
-            <div className='harga'>harga satuan</div>
-        </div>
-        </>
-    )
+function Listproduct({ product, onRemove }) {
+  const handleRemove = () => {
+    onRemove(product);
+  };
+
+  return (
+    <>
+      <div className="list">
+        <div className="icon">Gambar</div>
+        <div className="nama-produk">{product.name}</div>
+        <div className="jumlah">{product.quantity}</div>
+        <div className="harga">{product.price}</div>
+        <button className="hapus-button" onClick={handleRemove}>
+          Hapus
+        </button>
+      </div>
+    </>
+  );
 }
+
 export default Listproduct;

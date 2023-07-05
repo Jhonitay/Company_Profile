@@ -1,25 +1,48 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+const {  Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Order extends Model {
     static associate(models) {
       // define association here
       Order.belongsTo(models.Product, {
-        foreignKey : "Product_id",
-        targetKey: "Product_id",
-        as: "Product",
+        foreignKey : "product_id",
+        targetKey: "product_id",
+        as: "product",
+      })
+      Order.belongsTo(models.Account, {
+        foreignKey: "account_id",
+        targetKey: "account_id",
+        as: "account",
       })
       Order.belongsTo(models.User, {
-        foreignKey: "User_id",
-        targetKey: "User_id",
-        as: "User",
+        foreignKey: "user_id",
+        targetKey: "user_id",
+        as: "user",
       })
+
+      this.Product = Order.belongsTo(models.Product, {
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
+        foreignKey: {
+          name: "product_id",
+          type: DataTypes.UUID,
+          allowNull: true,
+        },
+      });
+
+      this.User = Order.belongsTo(models.User, {
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
+        foreignKey: {
+          name: "user_id",
+          type: DataTypes.UUID,
+          allowNull: true,
+        },
+      });
+
     }
   }
   Order.init({
-    Order_id: {
+    order_id: {
       type : DataTypes.UUID,
       defaultValue : DataTypes.UUIDV4,
       allowNull: false,
@@ -29,17 +52,22 @@ module.exports = (sequelize, DataTypes) => {
       field : "order_id",
       
     },
-    Product_id: {
+    product_id: {
       type: DataTypes.STRING,
       allowNull: false,
       field: "product_id",
     },
-    Account_id: {
+    user_id: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      field: "user_id",
+    },
+    account_id: {
       type: DataTypes.STRING,
       allowNull: false,
       field: "account_id",
     },
-    Jumlah: {
+    jumlah: {
       type: DataTypes.INTEGER,
       allowNull: false,
       field: "jumlah",
@@ -49,15 +77,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       field: "total",
     },
-    createdAt: {
-      type: DataTypes.DATE,
-        allowNull: false,
-        field: "created_at",
-        defaultValue: DataTypes.NOW,
-    }
   }, {
     sequelize,
     modelName: 'Order',
+    underscored: true
   });
   return Order;
 };

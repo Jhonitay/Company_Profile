@@ -1,0 +1,49 @@
+/* .content1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 450px;
+}
+
+.side {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sideLeft1 {
+  text-align: center;
+  width: 400px;
+  height: 200px;
+  margin-left:40px ;
+}
+
+.sideLeft1-cover {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.sideLeft1-text {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.sideRight1 img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
+.carousel-root {
+  max-width: 100%; /* Sesuaikan dengan ukuran yang diinginkan */
+  margin: 0 auto; /* Untuk mengatur posisi slider di tengah halaman */
+}
+
+/* .sliderimg{
+  height: min-content ; 
+  object-fit: cover  ; */
+} 

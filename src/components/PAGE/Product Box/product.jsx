@@ -12,9 +12,9 @@ function Product({ title, description, price, onAddToSpecification, image }) {
       <div className="product-title">{title}</div>
       <div className="product-description">{description}</div>
       <div className="product-price">{price}</div>
-      <button className="addcart" onClick={onAddToSpecification}>
+      {/* <button className="addcart" onClick={onAddToSpecification}>
         Add to Cart
-      </button>
+      </button> */}
     </div>
   );
 }

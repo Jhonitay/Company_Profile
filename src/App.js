@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 //import Navbar from "./components/NAVBAR/Navbar";
 import PageHome from "./pages/PageHome";
@@ -9,6 +9,7 @@ import PageOrder from "./pages/PageOrder";
 import PageTeam from "./pages/PageTeam";
 import PageLogin from "./pages/PageLogin";
 import PageSignUp from "./pages/PageSignUp";
+import PagePayment from "./pages/PagePayment";
 
 function App() {
   return (
@@ -23,9 +24,9 @@ function App() {
           <Route path="/Team" element={<PageTeam />} />
           <Route path="/Login" element={<PageLogin />} />
           <Route path="/SignUp" element={<PageSignUp />} />
+          <Route path="/Payment" element={<PagePayment />} />
         </Routes>
-      </Router> 
-      
+      </Router>
     </>
   );
 }

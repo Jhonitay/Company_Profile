@@ -194,7 +194,6 @@
 }
 
 .product-title {
-  max-width: 150px; /* Atur lebar maksimum untuk nama produk */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

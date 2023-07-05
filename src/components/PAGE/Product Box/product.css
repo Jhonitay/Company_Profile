@@ -12,12 +12,6 @@
   display: inline-block;
 }
 
-.product-title {
-  font-weight: bold;
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
 .product-description {
   margin-bottom: 10px;
 }
@@ -40,13 +34,6 @@
   bottom: 10px; /* Mengatur jarak dari bawah */
 }
 
-.product-title,
-.product-description,
-.product-price {
-  margin: 0;
-  padding: 0;
-}
-
 .product-box {
   width: 275px;
   height: 561px;
@@ -66,6 +53,9 @@
 .product-title {
   font-size: 20px;
   font-weight: 800;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
 .product-description {

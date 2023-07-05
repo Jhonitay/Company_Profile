@@ -63,15 +63,15 @@ function Order() {
   };
 
   const productList = [
-    { title: "Appia Life", description: "Description 1 ", price: 61000000, image: "http://localhost:3000/images/peraskopi.jpg" },
+    { title: "Product 1", description: "Description 1 ", price: 61000000, image: "http://localhost:3000/images/peraskopi.jpg" },
     { title: "Ground coffee", description: "Description 2", price: 10, image: "http://localhost:3000/images/groundkopi.jpg" },
-    { title: "Product 3", description: "Description 3", price: 61000000, image: "http://localhost:3000/images/bijikopi.jpg" },
-    { title: "Product 4", description: "Description 4", price: 61000000, image: "http://localhost:3000/images/permenkopi.jpg" },
-    { title: "Product 5", description: "Description 5", price: 61000000, image: "http://localhost:3000/images/mesinkopi.png" },
-    { title: "Product 6", description: "Description 6", price: 61000000, image: "http://localhost:3000/images/mesinespreso.jpg" },
-    { title: "Product 7", description: "Description 7", price: 61000000, image: "http://localhost:3000/images/bijikopisusu.jpg" },
-    { title: "Product 8", description: "Description 8", price: 61000000, image: "http://localhost:3000/images/ceret.jpg" },
-    { title: "Product 9", description: "Description 9", price: 61000000, image: "http://localhost:3000/images/ceretpremium.jpg" },
+    { title: "Coffe bean latte", description: "Description 3", price: 61000000, image: "http://localhost:3000/images/bijikopi.jpg" },
+    { title: "Coffe candy", description: "Description 4", price: 61000000, image: "http://localhost:3000/images/permenkopi.jpg" },
+    { title: "Coffe machine", description: "Description 5", price: 61000000, image: "http://localhost:3000/images/mesinkopi.png" },
+    { title: "Machine espresso", description: "Description 6", price: 61000000, image: "http://localhost:3000/images/mesinespreso.jpg" },
+    { title: "Milk coffe beans ", description: "Description 7", price: 61000000, image: "http://localhost:3000/images/bijikopisusu.jpg" },
+    { title: "Coffe drip kettle", description: "Description 8", price: 61000000, image: "http://localhost:3000/images/ceret.jpg" },
+    { title: "Espresso Maker Pot", description: "Description 9", price: 61000000, image: "http://localhost:3000/images/ceretpremium.jpg" },
     // Tambahkan produk lainnya di sini
   ];
 

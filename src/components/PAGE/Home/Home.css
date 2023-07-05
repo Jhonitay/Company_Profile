@@ -1,7 +1,11 @@
 *{
+    padding: 0px;
+    margin: 0px;
+    height: max-content;
+}
+.contain{
     padding: 0;
     margin: 0;
-    height: max-content;
 }
 .item-center{
     justify-content: center;

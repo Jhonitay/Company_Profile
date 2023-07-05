@@ -1,28 +1,38 @@
-*{
-    padding: 0;
-    margin: 0;
-    
+* {
+  padding: 0;
+  margin: 0;
 }
-.list{
-    height: max-content;
-    height: 100%;
-    display: flex;
-    padding:20px 0px;
-    border-bottom: 1px solid black;
+.list {
+  height: max-content;
+  height: 100%;
+  display: flex;
+  padding: 20px 0px;
+  border-bottom: 1px solid black;
 }
-.icon{
-    width: 25%;
-    /* background-color: aqua; */
+.icon {
+  width: 25%;
+  /* background-color: aqua; */
 }
-.nama-produk{
-    width: 40%;
-    /* background-color:aquamarine; */
+.nama-produk {
+  width: 40%;
+  /* background-color:aquamarine; */
 }
-.jumlah{
-    width: 15%;
-    /* background-color: bisque; */
+.jumlah {
+  width: 15%;
+  /* background-color: bisque; */
 }
-.harga{
-    width: 20%;
-    /* background-color: blueviolet; */
+.harga {
+  width: 20%;
+  /* background-color: blueviolet; */
+}
+
+.hapus-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }

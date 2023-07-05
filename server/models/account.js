@@ -1,4 +1,3 @@
-"use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Account extends Model {
@@ -9,11 +8,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.User = this.hasOne(models.User, {
-        foreignKey:{
+      this.User = Account.hasOne(models.User, {
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
+        foreignKey: {
           name: "account_id",
-          allowNull: false,
           type: DataTypes.UUID,
+          allowNull: false,
         },
       });
     }
@@ -39,17 +40,11 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         field: "password",
       },
-      created_at: {
-        type: DataTypes.DATE,
-        allowNull: false,
-        field: "created_at",
-        defaultValue: DataTypes.NOW,
-      },
     },
     {
       sequelize,
       modelName: "Account",
-      tableName: "accounts"
+      underscored: true
     }
   );
   return Account;

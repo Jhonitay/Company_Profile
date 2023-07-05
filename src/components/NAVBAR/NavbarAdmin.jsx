@@ -3,7 +3,7 @@ import "./Navbar.css";
 function NavbarAdmin(){
     return(
         <>
-        div>h1
+        <div>hhh</div>
         </>
     )
 }

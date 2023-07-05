@@ -4,25 +4,20 @@
   box-sizing: border-box;
 }
 
-.container {
+.containe {
   justify-content: center;
   display: flex;
   height: 100vh;
   margin-bottom: 2%;
   margin-top: 2%;
+  
 }
 
-@media (max-height: 1000px) {
-  .container {
-    height: fit-content;
-  }
-}
-
-.wrapper {
+.wrapperr {
   height: 100%;
   background-color: #ffffff;
   width: 40%;
-  padding: 25px;
+  padding: 25px 50px 25px 25px;
   justify-content: center;
   border: 2px solid #f4f1ee;
   border-radius: 10px;
@@ -43,12 +38,13 @@
 
 .input_box {
   margin-top: 10px;
-  width: 70%;
+  width: 100%;
   margin-right: 12px;
   position: relative;
   background-color: #f4f1ee;
-  padding: 15px;
+  padding: 5px;
   border: none;
+  border-radius: 5px;
 }
 
 .input_expired {
@@ -56,7 +52,7 @@
   width: 15%;
   margin-right: 12px;
   background-color: #f4f1ee;
-  padding: 15px;
+  padding: 10px;
   border: none;
 }
 
@@ -94,6 +90,6 @@
   margin-left: 5px;
 }
 
-.mb-5 {
+.mbb-5 {
   margin-bottom: 5px;
 }

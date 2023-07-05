@@ -2,8 +2,8 @@ import "./Home.css";
 function Home() {
   return (
     <>
-      <div>
-        <ul>
+      <div >
+        <ul className ="contain">
           <li class="content1">
             {/* content 1 */}
             <div class="side align-center ">

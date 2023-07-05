@@ -1,7 +1,11 @@
 *{
+    padding: 0px;
+    margin: 0px;
+    height: max-content;
+}
+.contain{
     padding: 0;
     margin: 0;
-    height: max-content;
 }
 .item-center{
     justify-content: center;
@@ -31,9 +35,6 @@
     /* background-color: aqua; */
     height: 200px;
     margin-left:40px ;
-
-}
-.sideLeft1-cover{
 
 }
 .sideLeft1-text{
@@ -80,11 +81,6 @@
     height: max-content;
     
 }
-.sideLeft3-title{
-    
-    
-}
-
 .button-content3{
     margin-top: 20px;
     margin-right: 20px;

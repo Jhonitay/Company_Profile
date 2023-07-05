@@ -1,14 +1,14 @@
 import './SignUP.css';
 
-const SignUP = () => {
+const SignUp = () => {
     return (
-        <div className='page'>
+        <div className="page">
        <div className="cover1">
         <h1>Sign Up</h1>
         <div className='Sign'>
-            <input type="text" placeholder='Username' /><br />
-            <input type="text" placeholder='Email' /><br />
-            <input type="password" placeholder='Password' />
+            <input type="text" placeholder="Username" /><br />
+            <input type="text" placeholder="Email" /><br />
+            <input type="password" placeholder="Password" />
         </div>
 
         <button className='Sign-up'>
@@ -36,4 +36,4 @@ const SignUP = () => {
 
     )
 }
-export default SignUP;
+export default SignUp;

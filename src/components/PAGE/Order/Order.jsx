@@ -40,9 +40,11 @@ function Order() {
 
   const removeProduct = (product) => {
     const updatedProducts = selectedProducts.filter((p) => p !== product);
+    const updatedProductImages = selectedProductImages.filter((_, index) => index !== selectedProducts.indexOf(product));
     const updatedQuantities = { ...quantities };
     delete updatedQuantities[product];
     setSelectedProducts(updatedProducts);
+    setSelectedProductImages(updatedProductImages);
     setQuantities(updatedQuantities);
   };
 
@@ -120,11 +122,9 @@ function Order() {
           <div className="side-product">
             {searchTerm === "" ? (
               productList.map((product, index) => (
-                <Product key={index} title={product.title} description={product.description} price={`Rp${product.price}`} onAddToSpecification={() => selectProduct(product.title, product.image)} image={product.image} />
-              ))
-            ) : searchResults.length > 0 ? (
-              searchResults.map((product, index) => (
-                <Product key={index} title={product.title} description={product.description} price={`Rp${product.price}`} onAddToSpecification={() => selectProduct(product.title, product.image)} image={product.image} />
+                <div key={index} className="product" onClick={() => selectProduct(product.title, product.image)}>
+                  <Product title={product.title} description={product.description} price={`Rp${product.price}`} image={product.image} />
+                </div>
               ))
             ) : (
               <p>Tidak ditemukan produk</p>

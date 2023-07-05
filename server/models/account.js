@@ -9,6 +9,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.User = this.hasOne(models.User, {
+        foreignKey:{
+          name: "account_id",
+          allowNull: false,
+          type: DataTypes.UUID,
+        },
+      });
     }
   }
   Account.init(
@@ -42,6 +49,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "Account",
+      tableName: "accounts"
     }
   );
   return Account;

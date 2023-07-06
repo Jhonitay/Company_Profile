@@ -1,21 +1,12 @@
 import "./Home.css";
+import Slider from "../Slider/Slider";
+
 function Home() {
   return (
     <>
       <div >
         <ul className ="contain">
-          <li class="content1">
-            {/* content 1 */}
-            <div class="side align-center ">
-              <div class="sideLeft1 ">
-                <h3 class="sideLeft1-cover">Kopi Gula Aren Mantap kali</h3>
-                <h1 class="sideLeft1-text">TIME DISCOVER COFFE HOUSE</h1>
-              </div>
-            </div>
-            <div class="sideRight1 side align-center item-center">
-              <img src="/images/bijikopi.png" />
-            </div>
-          </li>
+          <Slider />
 
           <li class="content2">
             {/* content 2 */}

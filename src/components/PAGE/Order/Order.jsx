@@ -211,9 +211,9 @@ function Order() {
           </div>
         </div>
         <div className="segment4">
-          <div className="box">
+          <div className="boxorder">
             <div className="list">
-              <div className="ikon">Gambar</div>
+              <div className="ikonorder">Gambar</div>
               <div className="namaProduk">Nama</div>
               <div className="jml">Jumlah</div>
               <div className="price">Harga Satuan</div>
@@ -226,8 +226,8 @@ function Order() {
           </div>
         </div>
         <div className="checkout-button-container">
-          <Link class="content" to="/Payment">
-            Chekout
+          <Link class="contentcheckout" to="/Payment">
+            Checkout
           </Link>
         </div>
       </body>

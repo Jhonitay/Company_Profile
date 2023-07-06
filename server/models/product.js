@@ -1,7 +1,4 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+const {  Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Product extends Model {
     /**
@@ -11,10 +8,19 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.Order = Product.hasMany(models.Order, {
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
+        foreignKey: {
+          name: "product_id",
+          type: DataTypes.UUID,
+          allowNull: true,
+        },
+      });
     }
   }
   Product.init({
-    Product_id: {
+    product_id: {
       type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
@@ -22,17 +28,17 @@ module.exports = (sequelize, DataTypes) => {
         unique: true,
         field: "product_id",
     },
-    Name: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
       field: "name",
     },
-    Dimensi: {
+    dimensi: {
       type: DataTypes.STRING,
       allowNull: false,
       field: "dimensi",
     },
-    Berat: {
+    berat: {
       type: DataTypes.INTEGER,
       allowNull: false,
       field: "berat",
@@ -47,15 +53,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       field: "jenis",
     },
-    createdAt: {
-      type: DataTypes.DATE,
-        allowNull: false,
-        field: "created_at",
-        defaultValue: DataTypes.NOW,
-    }
   }, {
     sequelize,
     modelName: 'Product',
+    underscored: true
   });
   return Product;
 };

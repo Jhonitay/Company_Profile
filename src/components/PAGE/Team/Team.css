@@ -1,41 +1,95 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Space Grotesk', sans-serif;
+	text-decoration: none;
+}
 .team{
-    height: max-content;
-    min-height: 65vh;
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background: burlywood;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.team-content{
+	width: 100%;
+	max-width: 1350px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+	align-items: center;
+	gap: 2rem;
+	text-align: center;
+	margin-top: 4rem;
+}
+.team-content img{
+	width: 100%;
+	height: auto;
+	border-radius: 15px;
+	margin-bottom: 15px;
+}
+.center h1{
+	color: #997950;
+	font-size: 4rem;
+	text-align: center;
+}
+.box{
+	padding: 16px;
+	background: bisque;
+	border-radius: 15px;
+	transition: all .38s ease;
+	height: auto;
+	width: auto;
+}
+.box h3{
+	font-size: 23px;
+	font-weight: 600;
+	color: #997950;
+	margin-bottom: 8px;
+}
+.box h5{
+	font-size: 15px;
+	font-weight: 600;
+	color: #997950;
+	margin-bottom: 15px;
+	letter-spacing: 2px;
+}
+.ikon{
+	margin: 2%;
+	color: #997950;
+}
+.Photo{
+	height: 130px!important;
+	width: 130px !important;
+	object-fit: cover;
+}
+.icons i{
+	display: flex;
+	flex-direction: row;
+	color: #fff;
+	font-size: 20px;
+	margin: 0 8px;
+	transition: all .38s ease;
+}
+.icons i:hover{
+	transform: scale(1.2);
+}
+.box:hover{
+	transform: translateY(-10px);
+	cursor: pointer;
 }
 
-.title{
-    text-align: center;
+@media(max-width: 1240px){
+	.team{
+		width: 100%;
+		height: auto;
+		padding: 90px 2%;
+	}
+	.center h1{
+		font-size: 3.2rem;
+	}
 }
-
-.team-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-  }
-  
-  .team-member {
-    background-color: burlywood;
-    border: 1px solid white;
-    border-radius: 4px;
-    margin: 10px;
-    padding: 20px;
-    text-align: center;
-    width: 200px;
-  }
-  
-  .team-member h2 {
-    margin-top: 0;
-  }
-  
-  .team-member p {
-    margin-bottom: 0;
-  }
-  
-  .team-member img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-  }

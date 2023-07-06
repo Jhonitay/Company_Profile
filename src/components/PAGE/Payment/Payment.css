@@ -7,10 +7,9 @@
 .containe {
   justify-content: center;
   display: flex;
-  height: 100vh;
+  height: 100%;
   margin-bottom: 2%;
   margin-top: 2%;
-  
 }
 
 .wrapperr {
@@ -31,6 +30,11 @@
   display: none;
   margin-bottom: 5px;
 }
+
+#input-metode1 {
+  display: block;
+}
+
 
 .label {
   font-size: larger;
@@ -58,15 +62,22 @@
 
 .total {
   margin-top: 10px;
-  width: 70%;
+  width: 100%;
   padding: 15px;
   display: flex;
   justify-content: space-between;
   background-color: #f4f1ee;
+  border-radius: 5px;
+  align-items: center; /* Menyatukan elemen secara vertikal di tengah */
+}
+
+.total p {
+  margin: 0;
+  text-align: center; /* Mengatur teks menjadi rata tengah */
 }
 
 .button {
-  width: 70%;
+  width: 100%;
   display: flex;
   justify-content: right;
 }

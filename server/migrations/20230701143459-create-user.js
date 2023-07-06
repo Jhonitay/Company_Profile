@@ -1,39 +1,37 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Products', {
-      product_id: {
+    await queryInterface.createTable('Users', {
+      user_id: {
         type: Sequelize.UUID,
           defaultValue: Sequelize.UUIDV4,
           primaryKey: true,
           allowNull: false,
           unique: true,
-          field: "product_id",
+          field: "user_id",
       },
-      name: {
+      first_name: {
         type: Sequelize.STRING,
-        allowNull: false,
-        field: "name",
+          allowNull: true,
+          field: "first_name",
       },
-      dimensi: {
+      last_name: {
         type: Sequelize.STRING,
-        allowNull: false,
-        field: "dimensi",
+          allowNull: true,
+          field: "last_name",
       },
-      berat: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        field: "berat",
-      },
-      stok: {
+      username: {
         type: Sequelize.STRING,
-        allowNull: false,
-        field: "stock",
+          allowNull: true,
+          unique: true,
+          field: "username",
       },
-      jenis: {
-        type: Sequelize.STRING,
+      account_id: {
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
         allowNull: false,
-        field: "jenis",
+        unique: true,
+        field: "account_id",
       },
       createdAt: {
         allowNull: false,
@@ -47,9 +45,21 @@ module.exports = {
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
         field: "updated_at",
       },
-      });
+    });
+
+    await queryInterface.addConstraint("users", {
+      fields: ["account_id"],
+      type: "foreign key",
+      references: {
+        table: "accounts",
+        field: "account_id",
+      },
+      onDelete: "CASCADE",
+      onUpdate: "CASCADE",
+    });
+
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Products');
+    await queryInterface.dropTable('Users');
   }
 };

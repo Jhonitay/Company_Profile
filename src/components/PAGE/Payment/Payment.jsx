@@ -1,7 +1,20 @@
 import "./Payment.css";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import Listproduct from "../List/Listproduct";
+
 
 function Payment() {
+  const [cartProducts, setCartProducts] = useState([]);
+
+  const calculateTotalHarga = () => {
+    return cartProducts.reduce((total, product) => total + product.price * product.quantity, 0);
+  };
+
+  const handleRemove = (product) => {
+    const updatedCartProducts = cartProducts.filter((p) => p.id !== product.id);
+    setCartProducts(updatedCartProducts);
+  };
+  
   useEffect(() => {
     const metodePembayaranRadios = document.getElementsByName("metode_pembayaran");
     const inputMetodeContainers = document.getElementsByClassName("input-metode");
@@ -94,10 +107,8 @@ function Payment() {
               Cart Total
             </label>
             <br />
-            <div class="total mbb-5">
-              <p>Total</p>
-              <p>Rp.90.000</p>
-            </div>
+            <div className="totalHarga">{calculateTotalHarga()}</div>
+
           </div>
 
           <div id="input-metode2" class="input-metode">

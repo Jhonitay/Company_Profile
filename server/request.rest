@@ -1,1 +1,19 @@
-GET http://localhost:5000/users
+POST  http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email" : "jhonitay@gmail.com",
+    "password" : "jhonojhon"
+
+}
+
+###
+POST  http://localhost:5000/signup
+Content-Type: application/json
+{
+    "email" : "jhonitay@gmail.com",
+    "password" : "jhonojhon",
+    "username" : "jhonitay",
+
+
+}

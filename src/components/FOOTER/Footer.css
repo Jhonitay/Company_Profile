@@ -4,7 +4,7 @@
 }
 .footer{
     height: max-content;
-    background-color: bisque;
+    background-color: black;
     width: 100%;
 }
 .phone{
@@ -16,22 +16,22 @@
 }
 .phone p{
     margin-left: 15%;
-    color: #997950;
+    color: #f8cc9a;
 }
 .bawahan{
-    border-top: 1px solid black;
+    border-top: 1px solid #fae7d2;
     padding-top: 10px;
     padding-bottom :20px;
     height: 50px;
     width: 100%;
     display: flex;
-    color: #997950;
+    color: #f8cc9a;
     justify-content: space-between;
 }
 .icons{
     margin-right: 10%;
     font-size: 24px;
-    color: #997950;
+    color: #f8cc9a;
 }
 .coffie{
     margin-left: 10%;

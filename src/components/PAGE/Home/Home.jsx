@@ -13,8 +13,7 @@ function Home() {
               </div>
             </div>
             <div class="sideRight1 side align-center item-center">
-              <image src="" />
-              <h1>IMG</h1>
+              <img src="/images/bijikopi.png" />
             </div>
           </li>
 

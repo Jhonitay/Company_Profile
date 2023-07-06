@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Order.css";
+import { Link } from "react-router-dom";
 import Product from "../Product Box/product";
 import Listproduct from "../List/Listproduct";
 
@@ -8,6 +9,34 @@ function Order() {
   const [quantities, setQuantities] = useState({});
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [cartProducts, setCartProducts] = useState([]);
+
+  const handleSearch = () => {
+    if (searchTerm.trim() === "") {
+      setSearchResults(productList);
+    } else {
+      const filteredProducts = productList.filter((product) => product.title.toLowerCase().includes(searchTerm.toLowerCase()));
+      setSearchResults(filteredProducts);
+    }
+  };
+
+  const handleButtonClick = () => {
+    handleSearch();
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
+  const selectProduct = (product) => {
+    setSelectedProducts([product]);
+    setQuantities((prevQuantities) => ({
+      ...prevQuantities,
+      [product]: 1,
+    }));
+  };
 
   const removeProduct = (product) => {
     const updatedProducts = selectedProducts.filter((p) => p !== product);
@@ -33,53 +62,18 @@ function Order() {
     }
   };
 
-  const selectProduct = (product) => {
-    setSelectedProducts([product]); // Replace the selected products with the new product
-
-    setQuantities((prevQuantities) => ({
-      ...prevQuantities,
-      [product]: 1,
-    }));
-  };
-
   const productList = [
-    { title: "Appia Life", price: 61000000 },
-    { title: "Product 2", price: 51000000 },
-    { title: "Product 3", price: 61000000 },
-    { title: "Product 4", price: 61000000 },
-    { title: "Product 5", price: 61000000 },
-    { title: "Product 6", price: 61000000 },
-    { title: "Product 7", price: 61000000 },
-    { title: "Product 8", price: 61000000 },
-    { title: "Product 9", price: 61000000 },
-    { title: "Product 10", price: 61000000 },
-    { title: "Product 11", price: 61000000 },
-    { title: "Product 12", price: 61000000 },
-    { title: "Product 13", price: 61000000 },
-    { title: "Product 14", price: 61000000 },
-    { title: "Product 15", price: 61000000 },
-    { title: "Product 16", price: 61000000 },
+    { title: "Product 1", description: "Description 1 ", price: 61000000, image: "http://localhost:3000/images/peraskopi.png" },
+    { title: "Ground coffee", description: "Description 2", price: 10, image: "http://localhost:3000/images/groundkopi.png" },
+    { title: "Coffe bean latte", description: "Description 3", price: 61000000, image: "http://localhost:3000/images/bijikopi.png" },
+    { title: "Coffe candy", description: "Description 4", price: 61000000, image: "http://localhost:3000/images/permenkopi.png" },
+    { title: "Coffe machine", description: "Description 5", price: 61000000, image: "http://localhost:3000/images/mesinkopi.png" },
+    { title: "Machine espresso", description: "Description 6", price: 61000000, image: "http://localhost:3000/images/mesinespreso.png" },
+    { title: "Milk coffe beans ", description: "Description 7", price: 61000000, image: "http://localhost:3000/images/bijikopisusu.png" },
+    { title: "Coffe drip kettle", description: "Description 8", price: 61000000, image: "http://localhost:3000/images/ceret.png" },
+    { title: "Espresso Maker Pot", description: "Description 9", price: 61000000, image: "http://localhost:3000/images/ceretpremium.png" },
     // Tambahkan produk lainnya di sini
   ];
-
-  const handleSearch = () => {
-    if (searchTerm.trim() === "") {
-      setSearchResults(productList);
-    } else {
-      const filteredProducts = productList.filter((product) => product.title.toLowerCase().includes(searchTerm.toLowerCase()));
-      setSearchResults(filteredProducts);
-    }
-  };
-
-  const handleButtonClick = () => {
-    handleSearch();
-  };
-
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      handleSearch();
-    }
-  };
 
   const moveToCart = () => {
     const cartProduct = selectedProducts.map((product) => {
@@ -89,6 +83,7 @@ function Order() {
         name: product,
         price: price,
         quantity: quantities[product] || 1,
+        image: selectedProduct ? selectedProduct.image : "",
       };
     });
 
@@ -99,8 +94,6 @@ function Order() {
     setQuantities({});
   };
 
-  const [cartProducts, setCartProducts] = useState([]);
-
   const removeProductFromCart = (product) => {
     const updatedCartProducts = cartProducts.filter((p) => p !== product);
     setCartProducts(updatedCartProducts);
@@ -109,27 +102,35 @@ function Order() {
   return (
     <>
       <body>
-        <div className="segment1 flex align-center justify-center ">
-          <img alt="img" />
+        <div className="bg_order">
+          <a className="button_order" href=" ">
+            All Products
+          </a>
         </div>
         <div className="segment2">
           <div id="search-form">
             <input type="text" id="search-input" placeholder="Enter your search term" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} onKeyPress={handleKeyPress} />
-            <button type="button" id="search-button" onClick={handleButtonClick}>
-              <img src="path_to_search_image" alt="Search" />
-            </button>
           </div>
         </div>
         <div className="segment3 flex">
           <div className="side-product">
             {searchTerm === "" ? (
-              productList.map((product, index) => <Product key={index} title={product.title} price={`Rp${product.price}`} onAddToSpecification={() => selectProduct(product.title)} />)
+              productList.map((product, index) => (
+                <div key={index} className="product" onClick={() => selectProduct(product.title)}>
+                  <Product title={product.title} description={product.description} price={`Rp${product.price}`} image={product.image} />
+                </div>
+              ))
             ) : searchResults.length > 0 ? (
-              searchResults.map((product, index) => <Product key={index} title={product.title} price={`Rp${product.price}`} onAddToSpecification={() => selectProduct(product.title)} />)
+              searchResults.map((product, index) => (
+                <div key={index} className="product" onClick={() => selectProduct(product.title)}>
+                  <Product title={product.title} description={product.description} price={`Rp${product.price}`} image={product.image} />
+                </div>
+              ))
             ) : (
-              <p>No products found</p>
+              <p>Tidak ditemukan produk</p>
             )}
           </div>
+
           <div className="side-right box-keterangan">
             <div className="spesifikasi">
               <h3>specification</h3>
@@ -201,24 +202,33 @@ function Order() {
               )}
             </div>
             <div className="gambar-product">
-              <div>
-                <img src="" alt="img" />
-              </div>
+              {selectedProducts.map((product, index) => (
+                <div key={index}>
+                  <img src={productList.find((p) => p.title === product)?.image} alt="Product" className="product-image" />
+                </div>
+              ))}
             </div>
           </div>
         </div>
         <div className="segment4">
-          <div className="box">
+          <div className="boxorder">
             <div className="list">
-              <div className="ikon">Gambar</div>
+              <div className="ikonorder">Gambar</div>
               <div className="namaProduk">Nama</div>
               <div className="jml">Jumlah</div>
-              <div className="price">harga satuan</div>
+              <div className="price">Harga Satuan</div>
+              <div className="totalorder">Total Harga</div>
+              <div className="rmv"></div>
             </div>
             {cartProducts.map((product, index) => (
-              <Listproduct key={index} product={product} onRemove={removeProductFromCart} />
+              <Listproduct key={index} product={product} onRemove={removeProductFromCart} cartProducts={cartProducts} setCartProducts={setCartProducts} />
             ))}
           </div>
+        </div>
+        <div className="checkout-button-container">
+          <Link class="contentcheckout" to="/Payment">
+            Checkout
+          </Link>
         </div>
       </body>
     </>

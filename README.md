@@ -7,3 +7,4 @@ Anggota Kelompok:
 - 21.11.4377 : Deni Masulili {Frontend}
 - 21.11.4378 : Sonny Wahyu Setiawan {Frontend}
 - 21.11.4392 : Kadek Aditya Ananta {Backend}
+

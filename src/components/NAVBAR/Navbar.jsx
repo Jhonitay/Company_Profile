@@ -7,26 +7,53 @@ function Navbar() {
 
   return (
     <div className="justify-flex">
-      <div className="logo">
-        <h1>Logo</h1>
+      <div className="logo justify-flex ">
+        <img src="\latterG.svg" alt="" />
+        <p>Sugeng</p>
       </div>
       <div className="navbar">
-        <Link className={`content ${location.pathname === "/" ? "active" : ""}`} to="/">
+        <Link
+          className={`content ${location.pathname === "/" ? "active" : ""}`}
+          to="/"
+        >
           Home
         </Link>
-        <Link className={`content ${location.pathname === "/About" ? "active" : ""}`} to="/About">
+        <Link
+          className={`content ${
+            location.pathname === "/About" ? "active" : ""
+          }`}
+          to="/About"
+        >
           About
         </Link>
-        <Link className={`content ${location.pathname === "/Order" ? "active" : ""}`} to="/Order">
+        <Link
+          className={`content ${
+            location.pathname === "/Order" ? "active" : ""
+          }`}
+          to="/Order"
+        >
           Order
         </Link>
-        <Link className={`content ${location.pathname === "/Contact" ? "active" : ""}`} to="/Contact">
+        <Link
+          className={`content ${
+            location.pathname === "/Contact" ? "active" : ""
+          }`}
+          to="/Contact"
+        >
           Contact
         </Link>
-        <Link className={`content ${location.pathname === "/Team" ? "active" : ""}`} to="/Team">
+        <Link
+          className={`content ${location.pathname === "/Team" ? "active" : ""}`}
+          to="/Team"
+        >
           Team
         </Link>
-        <Link className={`content ${location.pathname === "/Login" ? "active" : ""}`} to="/Login">
+        <Link
+          className={`content ${
+            location.pathname === "/Login" ? "active" : ""
+          }`}
+          to="/Login"
+        >
           Login
         </Link>
       </div>

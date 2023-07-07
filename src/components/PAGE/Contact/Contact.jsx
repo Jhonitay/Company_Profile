@@ -1,6 +1,18 @@
 // import { useRef } from "react";
 import "./Contact.css";
 import { useState } from "react";
+import Swal from "sweetalert2";
+
+function custom_alert(e) {
+  Swal.fire({
+    icon: "success",
+    title: "Terimakasih Telah Menghubungi Kami",
+    iconColor: "#c7a17a",
+    // confirmButtonColor: "#c7a17a",
+    showConfirmButton: false,
+    timer: 2000,
+  });
+}
 
 function Contact() {
   // const nameInput = useRef("");
@@ -70,14 +82,41 @@ function Contact() {
               </div>
             </div>
             <form action="" className="grid-container">
-              <input type="text" id="name" placeholder="Your Name :" data-type="data" value={name} onChange={handleChangeName} className="name" />
-              <input type="text" id="mail" placeholder="Your Mail :" className="mail" />
-              <input type="text" id="tlp" placeholder="Your Phone :" className="tlp" value={phone} onChange={handleChangePhone} />
-              <textarea name="message" id="message" className="message" cols="30" rows="10" placeholder="Your Message :"></textarea>
+              <input
+                type="text"
+                id="name"
+                placeholder="Your Name :"
+                data-type="data"
+                value={name}
+                onChange={handleChangeName}
+                className="name"
+              />
+              <input
+                type="text"
+                id="mail"
+                placeholder="Your Mail :"
+                className="mail"
+              />
+              <input
+                type="text"
+                id="tlp"
+                placeholder="Your Phone :"
+                className="tlp"
+                value={phone}
+                onChange={handleChangePhone}
+              />
+              <textarea
+                name="message"
+                id="message"
+                className="message"
+                cols="30"
+                rows="10"
+                placeholder="Your Message :"
+              ></textarea>
             </form>
-            <a href=" " className="send_button">
+            <butto1 href="#" onClick={custom_alert} className="send_button">
               SEND MESSAGE
-            </a>
+            </butto1>
           </div>
           <div className="maps">
             <h1>Maps</h1>

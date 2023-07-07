@@ -8,12 +8,13 @@ Content-Type: application/json
 }
 
 ###
-POST  http://localhost:5000/signup
+POST  http://127.0.0.1:5000/signup
 Content-Type: application/json
+
 {
     "email" : "jhonitay@gmail.com",
     "password" : "jhonojhon",
-    "username" : "jhonitay",
+    "username" : "jhonitay"
 
 
 }

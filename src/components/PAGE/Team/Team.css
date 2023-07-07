@@ -61,10 +61,12 @@
 .ikon{
 	margin: 2%;
 	color: #997950;
+	height: 20%;
+	width: 20%;
 }
 .Photo{
-	height: 130px!important;
-	width: 130px !important;
+	height: 120px!important;
+	width: 120px !important;
 	object-fit: cover;
 }
 .icons i{

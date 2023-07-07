@@ -67,29 +67,29 @@ function Home() {
 
           <li class="content3">
             {/* content 3 */}
-            <div class="side align-center item-center">
+            <div class="sideRight11 side align-center item-center">
+              <img src="/images/imghome.jpg" alt="IMG" ></img>
+            </div>
+            <div class="sidehome">
               <div class="sideLeft3 ">
-                <h1 class="sideLeft3-title">TIME DISCOVER</h1>
-                <h1 class="sideLeft3-title">COFFE HOUSE</h1>
-                <p class="sideLeft3-text">Kami menawarkan beragam varietas kopi, mulai dari single origin hingga campuran unik, yang akan memenuhi keinginan dan preferensi penikmat kopi paling cerdas.</p>
+                <h1 class="size2">TIME DISCOVER</h1>
+                <h1 class="size2">COFFE HOUSE</h1>
+                <p class="box-text5">Kami menawarkan beragam varietas kopi, mulai dari single origin hingga campuran unik, yang akan memenuhi keinginan dan preferensi penikmat kopi paling cerdas.</p>
                 <div class="flex ">
                   <button class="button-content3 black">
-                    <Link to="/Order" className="Link">
-                      Read more
+                    <Link to="/About" className="Link">
+                      Read More
                     </Link>
                   </button>
                   <button class="button-content3 brown">
                     <Link to="/Order" className="Link">
-                      view Product
+                      View Product
                     </Link>
                   </button>
                 </div>
               </div>
             </div>
-            <div class="sideRight1 side align-center item-center">
-              <image src="" />
-              <h1>IMG</h1>
-            </div>
+            
           </li>
 
           <li class="content4">

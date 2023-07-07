@@ -7,8 +7,9 @@ function Navbar() {
 
   return (
     <div className="justify-flex">
-      <div className="logo">
-        <h1>Logo</h1>
+      <div className="logo justify-flex ">
+        <img src="\latterG.svg" alt="" />
+        <p>Sugeng</p>
       </div>
       <div className="navbar">
         <Link className={`content ${location.pathname === "/" ? "active" : ""}`} to="/">

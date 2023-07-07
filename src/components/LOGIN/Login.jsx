@@ -1,7 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom';
 import './login.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState,} from 'react';
 import axios from 'axios';
+import Swal from "sweetalert2";
 
 
 
@@ -9,23 +10,44 @@ import axios from 'axios';
 function Login(){
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
   
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/login', { email, password });
-      console.log(response.data);
+      await axios.post('http://localhost:5000/login', { email, password });
+      console.log('login success');
+      custom_alert();
+      navigate('/');
     } catch (error) {
-        console.log('ini error');
+        console.log('terjadi error masbro ');
       if (error.response && error.response.data) {
-        setErrorMessage(error.response.data.message);
       } else {
-        setErrorMessage('Terjadi kesalahan saat melakukan login');
       }
+      error_alert();
     }
   };
-  navigate('/');
+  function custom_alert(e) {
+    Swal.fire({
+      icon: "success",
+      title: "Sign Up berhasil",
+      iconColor: "#02cc0c",
+      // confirmButtonColor: "#c7a17a",
+      showConfirmButton: false,
+      timer: 2000,
+    });
+  }
+  function error_alert(e) {
+    Swal.fire({
+      icon: "error",
+      title: "Sign In gagal",
+      iconColor: "#b83d3d",
+      // confirmButtonColor: "#c7a17a",
+      showConfirmButton: false,
+      timer: 2000,
+    });
+  }
+
+
 //   const checkLoggedIn = async () => {
 //     try {
 //       const response = await axios.get('/api/checkLoggedIn');
@@ -35,10 +57,6 @@ function Login(){
 //       console.error('Terjadi kesalahan saat memeriksa login', error);
 //     }
 //   };
-  useEffect(() => {
-    handleLogin();
-
-  }, []);
 
 
     return (
@@ -49,10 +67,9 @@ function Login(){
         <input type="text" placeholder="Username / Email" value={email} onChange={(e) => setEmail(e.target.value)}/> <br />
         <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
         </div>
-        <button className="Login-btn" nClick={handleLogin}>Login</button>
+        <button className="Login-btn" onClick={handleLogin}>Login</button>
         <p className="Text">Atau</p>
         <Link to="/SignUp" className="SignUp-btn">SignUp</Link>
-        {errorMessage && <p>{errorMessage}</p>}
     
        </div>
        </div>

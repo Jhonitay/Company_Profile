@@ -10,7 +10,7 @@ function About() {
         <section>
           <div class="foto">
             <img src="images/About.jpg" alt="" class="foto-about" />
-            <h2>About US</h2>
+            <h2 className="button_contact">About US</h2>
           </div>
           <div class="about-text">
             <h2>About Coffe Indonesia</h2>

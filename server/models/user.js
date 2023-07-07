@@ -1,4 +1,3 @@
-'use strict';
 const {
   Model
 } = require('sequelize');
@@ -11,15 +10,19 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      User.belongsTo(models.Account, {
-        foreignKey: "account_id",
-        targetKey: "account_id",
-        as: "account",
+      this.Account = User.belongsTo(models.Account, {
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
+        foreignKey: {
+          name: "account_id",
+          type: DataTypes.UUID,
+          allowNull: true,
+        },
       });
     }
   }
   User.init({
-    User_id: {
+    user_id: {
       type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
@@ -27,32 +30,26 @@ module.exports = (sequelize, DataTypes) => {
         unique: true,
         field: "user_id",
     },
-    First_name: {
+    first_name: {
       type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         field: "first_name",
     },
-    Last_name: {
+    last_name: {
       type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         field: "last_name",
     },
-    Username: {
+    username: {
       type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         unique: true,
         field: "username",
     },
-    createdAt: {
-      type: DataTypes.DATE,
-        allowNull: false,
-        field: "created_at",
-        defaultValue: DataTypes.NOW,
-    } 
   }, {
     sequelize,
     modelName: 'User',
-    tableName: "users"
+    underscored: true
   });
   return User;
 };

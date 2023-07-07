@@ -1,22 +1,14 @@
 import "./Home.css";
+import Slider from "../Slider/Slider";
+import { Link, useNavigate } from "react-router-dom";
+
 function Home() {
+  const navigate = useNavigate();
   return (
     <>
-      <div >
-        <ul className ="contain">
-          <li class="content1">
-            {/* content 1 */}
-            <div class="side align-center ">
-              <div class="sideLeft1 ">
-                <h3 class="sideLeft1-cover">Kopi Gula Aren Mantap kali</h3>
-                <h1 class="sideLeft1-text">TIME DISCOVER COFFE HOUSE</h1>
-              </div>
-            </div>
-            <div class="sideRight1 side align-center item-center">
-              <image src="" />
-              <h1>IMG</h1>
-            </div>
-          </li>
+      <div>
+        <ul className="contain">
+          <Slider />
 
           <li class="content2">
             {/* content 2 */}
@@ -88,8 +80,16 @@ function Home() {
                   preferensi penikmat kopi paling cerdas.
                 </p>
                 <div class="flex ">
-                  <button class="button-content3 black">Read more</button>
-                  <button class="button-content3 brown">view Product</button>
+                  <button class="button-content3 black">
+                    <Link to="/Order" className="Link">
+                      Read more
+                    </Link>
+                  </button>
+                  <button class="button-content3 brown">
+                    <Link to="/Order" className="Link">
+                      view Product
+                    </Link>
+                  </button>
                 </div>
               </div>
             </div>
@@ -138,7 +138,11 @@ function Home() {
                   online yang mudah dan cepat, sehingga kamu dapat menikmati
                   secangkir kopi pilihanmu kapan pun dan di mana pun.
                 </p>
-                <button class="button-content5">view all product</button>
+                <button class="button-content5">
+                  <Link to="/Order" className="Link">
+                    view all product
+                  </Link>
+                </button>
               </div>
             </div>
           </li>
@@ -152,7 +156,11 @@ function Home() {
                 team kami.
               </p>
               <div class="question">
-                <button class="buttonClickHere black">click here</button>
+                <button class="buttonClickHere black">
+                  <Link to="/Contact" class="Link">
+                    click here
+                  </Link>
+                </button>
               </div>
             </div>
           </li>

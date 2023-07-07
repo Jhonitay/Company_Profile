@@ -1,7 +1,8 @@
 const express =  require("express");
-const newRoute =  require("./routes/newRoute.js");
+const {noLogin, withLogin} =  require("./routes");
 const { router } =  require("./routes/index.js");
 const cors = require("cors");
+const { verifyToken } = require("./controller/verify");
 const port = 5000;
 const app = express();
 
@@ -25,7 +26,14 @@ app.get("/test", (req, res) => {
   res.send("Test route");
 });
 
-app.use("/", newRoute);
+//laman tanpa login
+app.use("/", noLogin);
+
+//verifikasi token
+app.use(verifyToken);
+
+//laman dengan login
+app.use("/", withLogin);
 
 
 app.get("/about", (req, res) => {

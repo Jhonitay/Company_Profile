@@ -1,13 +1,13 @@
 import "./Home.css";
 import Slider from "../Slider/Slider";
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 
 function Home() {
   const navigate = useNavigate();
   return (
     <>
-      <div >
-        <ul className ="contain">
+      <div>
+        <ul className="contain">
           <Slider />
 
           <li class="content2">
@@ -81,10 +81,14 @@ function Home() {
                 </p>
                 <div class="flex ">
                   <button class="button-content3 black">
-                  <Link to="/Order" className="Link" >Read more</Link>
+                    <Link to="/Order" className="Link">
+                      Read more
+                    </Link>
                   </button>
                   <button class="button-content3 brown">
-                  <Link to="/Order" className="Link" >view Product</Link>
+                    <Link to="/Order" className="Link">
+                      view Product
+                    </Link>
                   </button>
                 </div>
               </div>
@@ -135,8 +139,10 @@ function Home() {
                   secangkir kopi pilihanmu kapan pun dan di mana pun.
                 </p>
                 <button class="button-content5">
-                  <Link to="/Order" className="Link" >view all product</Link>
-                  </button>
+                  <Link to="/Order" className="Link">
+                    view all product
+                  </Link>
+                </button>
               </div>
             </div>
           </li>
@@ -151,8 +157,10 @@ function Home() {
               </p>
               <div class="question">
                 <button class="buttonClickHere black">
-                <Link to="/Contact" class="Link">click here</Link>
-                  </button>
+                  <Link to="/Contact" class="Link">
+                    click here
+                  </Link>
+                </button>
               </div>
             </div>
           </li>

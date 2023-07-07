@@ -1,24 +1,28 @@
-import './SignUP.css';
-import { useNavigate } from 'react-router-dom';
-import React, { useState,} from 'react';
-import axios from 'axios';
+import "./SignUP.css";
+import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import axios from "axios";
 import Swal from "sweetalert2";
 
 const SignUp = () => {
-  const [email, getEmail] = useState('');
-  const [password, getPassword] = useState('');
-  const [username, getUsername] = useState('');
+  const [email, getEmail] = useState("");
+  const [password, getPassword] = useState("");
+  const [username, getUsername] = useState("");
 
   const navigate = useNavigate();
-  
+
   const handleLogin = async () => {
     try {
-      await axios.post('http://localhost:5000/signup', { email, password, username });
-      console.log('login success');
+      await axios.post("http://localhost:5000/signup", {
+        email,
+        password,
+        username,
+      });
+      console.log("login success");
       custom_alert();
-      navigate('/');
+      navigate("/");
     } catch (error) {
-        console.log('terjadi error signup');
+      console.log("terjadi error signup");
       if (error.response && error.response.data) {
       } else {
       }
@@ -47,26 +51,39 @@ const SignUp = () => {
     });
   }
 
-
-
-    return (
-        <div className="page">
-       <div className="cover1">
+  return (
+    <div className="page">
+      <div className="cover1">
         <h1>Sign Up</h1>
-        <div className='Sign'>
-            <input type="text" placeholder="Username" value={username} onChange={(e) => getUsername(e.target.value)} /><br />
-            <input type="text" placeholder="Email" value={email} onChange={(e) => getEmail(e.target.value)} /><br />
-            <input type="password" placeholder="Password" value={password} onChange={(e) => getPassword(e.target.value)} />
+        <div className="Sign">
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => getUsername(e.target.value)}
+          />
+          <br />
+          <input
+            type="text"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => getEmail(e.target.value)}
+          />
+          <br />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => getPassword(e.target.value)}
+          />
         </div>
 
-        <button className='Sign-up' onClick={handleLogin}>
-        Sign UP
+        <button className="Sign-up" onClick={handleLogin}>
+          Sign UP
         </button>
-       
-    
-       </div>
-       </div>
-       
+      </div>
+    </div>
+
     //    <div className="cover">
     //    <h1>Login</h1>
     //    <div className='isi'>
@@ -79,9 +96,8 @@ const SignUp = () => {
     //    <p className='Text'>Atau</p>
     //    {/* <div className='SignUp-btn'>SignUp</div> */}
     //    <Link to="/signup" className='SignUp-btn'>SignUp</Link>
-   
-    //   </div>
 
-    )
-}
+    //   </div>
+  );
+};
 export default SignUp;

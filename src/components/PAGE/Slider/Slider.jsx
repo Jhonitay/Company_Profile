@@ -23,7 +23,14 @@ function Slider() {
   ];
 
   return (
-    <Carousel infiniteLoop useKeyboardArrows autoPlay swipeable emulateTouch showStatus={false}>
+    <Carousel
+      infiniteLoop
+      useKeyboardArrows
+      autoPlay
+      swipeable
+      emulateTouch
+      showStatus={false}
+    >
       {data.map((item, index) => (
         <li key={index} className="content1">
           <div className="side align-center ">

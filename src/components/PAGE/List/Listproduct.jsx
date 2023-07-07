@@ -6,7 +6,10 @@ function Listproduct({ product, onRemove, cartProducts, setCartProducts }) {
     onRemove(product);
   };
 
-  const totalHarga = cartProducts.reduce((total, product) => total + product.price * product.quantity, 0);
+  const totalHarga = cartProducts.reduce(
+    (total, product) => total + product.price * product.quantity,
+    0
+  );
 
   return (
     <>

@@ -88,6 +88,23 @@ h1 {
     transform: scale(1.25);
 }
 
+.akun{
+    /* border: 1px solid black; */
+    width: 100%;
+    display: flex;
+    /* /* align-items: center; */
+    justify-content: center; 
+    
+}
+
+.akun p{
+    /* margin-top: 12px;
+    text-align: center; */
+    margin-right: 5px;
+
+    
+}
+
 
 /* .Login-btn{
     border: 1px solid blue;

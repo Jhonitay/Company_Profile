@@ -1,8 +1,8 @@
-const { Product } = require("../models");
+const { Product, Order} = require("../models");
 
 const  getproduct = async (req, res) => {
   console.log("Request profile received!");
-  const product = await Product.findOne({ where: { product_id: req.body.product_id } });
+  const product = await Order.findAll({ where: { product_id: req.body.product_id } });
   if (!product) {
     const error = new Error("Product not found!");
     error.code = "404";

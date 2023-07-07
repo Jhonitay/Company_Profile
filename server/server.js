@@ -2,7 +2,6 @@ const express =  require("express");
 const { router } =  require("./routes/index.js");
 
 const port = 5000;
-
 const app = express();
 
 // try {

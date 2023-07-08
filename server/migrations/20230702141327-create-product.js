@@ -34,6 +34,11 @@ module.exports = {
         allowNull: false,
         field: "jenis",
       },
+      harga: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        field: "harga",
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

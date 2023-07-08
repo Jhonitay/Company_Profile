@@ -26,6 +26,7 @@ const  getProduct = async (req, res) => {
       berat: product.berat,
       stok: product.stok,
       jenis: product.jenis,
+      harga: product.harga
     },
   };
   console.log(response);

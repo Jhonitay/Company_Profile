@@ -44,6 +44,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    harga: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   }, {
     sequelize,
     modelName: "Product",

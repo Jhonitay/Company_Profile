@@ -70,7 +70,6 @@
   align-items: center;
   border-radius: 10px;
   background-color: #c7a17a;
-  cursor: pointer;
 }
 
 .icon_pesan {
@@ -144,8 +143,7 @@ textarea {
   grid-area: 3 / 1 / 4 / 5;
 }
 .maps {
-  margin-top: 75px;
-  margin-bottom: 50px;
+  margin-top: 160px;
   height: 500px;
   width: 1240px;
 }

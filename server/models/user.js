@@ -15,40 +15,48 @@ module.exports = (sequelize, DataTypes) => {
         onUpdate: "CASCADE",
         foreignKey: {
           name: "account_id",
-          type: DataTypes.UUID,
-          allowNull: true,
         },
       });
+      this.Order = User.hasMany(models.Order, {
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
+        foreignKey: {
+          name: "user_id",
+          // type: DataTypes.UUID,
+          // allowNull: true,
+        },
+        as: "user"
+      })
     }
   }
   User.init({
-    user_id: {
+    userId: {
       type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
         allowNull: false,
-        unique: true,
-        field: "user_id",
     },
-    first_name: {
+    firstName: {
       type: DataTypes.STRING,
         allowNull: true,
-        field: "first_name",
     },
-    last_name: {
+    lastName: {
       type: DataTypes.STRING,
         allowNull: true,
-        field: "last_name",
     },
     username: {
       type: DataTypes.STRING,
-        allowNull: true,
-        unique: true,
-        field: "username",
+      allowNull: true,
+      unique: true,
+    },
+    accountId: {
+      type: DataTypes.UUID,
+      allowNull: true,
     },
   }, {
     sequelize,
-    modelName: 'User',
+    modelName: "User",
+    tableName: "users",
     underscored: true
   });
   return User;

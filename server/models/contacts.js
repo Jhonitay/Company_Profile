@@ -1,6 +1,6 @@
 const {  Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Product extends Model {
+  class Contacts extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -8,51 +8,36 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.Order = Product.hasMany(models.Order, {
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
-        foreignKey: {
-          name: "product_id",
-        },
-      });
     }
   }
-  Product.init({
-    productId: {
+  Contacts.init({
+    contactsId: {
       type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
-        primaryKey: true,
-        allowNull: false,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true,
+      allowNull: false,
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    dimensi: {
+    email: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    berat: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    stok: {
+    phoneNumber: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    jenis: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    harga: {
-      type: DataTypes.INTEGER,
+    message: {
+      type: DataTypes.TEXT,
       allowNull: false,
     },
   }, {
     sequelize,
-    modelName: "Product",
-    tableName: "products",
+    modelName: "Contacts",
+    tableName: "contacts",
     underscored: true
   });
-  return Product;
+  return Contacts;
 };

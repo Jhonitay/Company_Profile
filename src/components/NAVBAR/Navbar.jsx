@@ -1,64 +1,25 @@
 import "./Navbar.css";
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Navbar() {
-  const location = useLocation();
-
+  // const navigate = useNavigate();
   return (
-    <div className="justify-flex">
-      <div className="logo justify-flex ">
-        <img src="\latterG.svg" alt="" />
-        <p>Sugeng</p>
+    <>
+    <div class="justify-flex">
+      <div class="logo ">
+        <h1>Logo</h1>
       </div>
-      <div className="navbar">
-        <Link
-          className={`content ${location.pathname === "/" ? "active" : ""}`}
-          to="/"
-        >
-          Home
-        </Link>
-        <Link
-          className={`content ${
-            location.pathname === "/About" ? "active" : ""
-          }`}
-          to="/About"
-        >
-          About
-        </Link>
-        <Link
-          className={`content ${
-            location.pathname === "/Order" ? "active" : ""
-          }`}
-          to="/Order"
-        >
-          Order
-        </Link>
-        <Link
-          className={`content ${
-            location.pathname === "/Contact" ? "active" : ""
-          }`}
-          to="/Contact"
-        >
-          Contact
-        </Link>
-        <Link
-          className={`content ${location.pathname === "/Team" ? "active" : ""}`}
-          to="/Team"
-        >
-          Team
-        </Link>
-        <Link
-          className={`content ${
-            location.pathname === "/Login" ? "active" : ""
-          }`}
-          to="/Login"
-        >
-          Login
-        </Link>
+      <div class="navbar">
+       <Link class="content" to="/">Home</Link>
+       <Link class="content" to="/About">About</Link>
+       <Link class="content" to="/Order" >Order</Link>
+       <Link class="content" to="/Contact">Contact</Link>
+       <Link class="content" to="/Team">Yteam</Link>
+       <Link class="content" to="/Login">Login</Link>
       </div>
     </div>
+    </>
   );
 }
-
 export default Navbar;

@@ -99,7 +99,7 @@ function Team() {
               className="Photo"
             />
             <h3>Mahadi Ocsidio</h3>
-            <h5>Front End</h5>
+            <h5>Back end cuy</h5>
             <div class="icons">
               <FaFacebook className="ikon" />
               <FaInstagram className="ikon" />

@@ -43,4 +43,4 @@ const verifyToken = (req, res, next) => {
   }
 };
 
-module.exports = { verify };
+module.exports = { verifyToken };

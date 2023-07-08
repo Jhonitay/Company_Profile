@@ -1,43 +1,33 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('products', {
-      productId: {
+    await queryInterface.createTable('contacts', {
+      contactId: {
         type: Sequelize.UUID,
-          defaultValue: Sequelize.UUIDV4,
-          primaryKey: true,
-          allowNull: false,
-          field: "product_id",
+        defaultValue: Sequelize.UUIDV4,
+        primaryKey: true,
+        allowNull: false,
+        field: "contacts_id",
       },
       name: {
         type: Sequelize.STRING,
         allowNull: false,
         field: "name",
       },
-      dimensi: {
+      email: {
         type: Sequelize.STRING,
         allowNull: false,
-        field: "dimensi",
+        field: "email",
       },
-      berat: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        field: "berat",
-      },
-      stok: {
+      phoneNumber: {
         type: Sequelize.STRING,
         allowNull: false,
-        field: "stok",
+        field: "phone_number",
       },
-      jenis: {
-        type: Sequelize.STRING,
+      message: {
+        type: Sequelize.TEXT,
         allowNull: false,
-        field: "jenis",
-      },
-      harga: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        field: "harga",
+        field: "message",
       },
       createdAt: {
         allowNull: false,
@@ -50,10 +40,10 @@ module.exports = {
         type: Sequelize.DATE,
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
         field: "updated_at",
-      },
-      });
+      }
+    });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('products');
+    await queryInterface.dropTable('contacts');
   }
 };

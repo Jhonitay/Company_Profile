@@ -13,37 +13,32 @@ module.exports = (sequelize, DataTypes) => {
         onUpdate: "CASCADE",
         foreignKey: {
           name: "account_id",
-          type: DataTypes.UUID,
-          allowNull: false,
         },
       });
     }
   }
   Account.init(
     {
-      account_id: {
+      accountId: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
         allowNull: false,
-        unique: true,
-        field: "account_id",
       },
       email: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
-        field: "email",
       },
       password: {
         type: DataTypes.STRING,
         allowNull: false,
-        field: "password",
       },
     },
     {
       sequelize,
       modelName: "Account",
+      tableName: "accounts",
       underscored: true
     }
   );

@@ -1,22 +1,7 @@
 import "./Payment.css";
-import React, { useEffect, useState } from "react";
-import Listproduct from "../List/Listproduct";
+import React, { useEffect } from "react";
 
 function Payment() {
-  const [cartProducts, setCartProducts] = useState([]);
-
-  const calculateTotalHarga = () => {
-    return cartProducts.reduce(
-      (total, product) => total + product.price * product.quantity,
-      0
-    );
-  };
-
-  const handleRemove = (product) => {
-    const updatedCartProducts = cartProducts.filter((p) => p.id !== product.id);
-    setCartProducts(updatedCartProducts);
-  };
-
   useEffect(() => {
     const metodePembayaranRadios =
       document.getElementsByName("metode_pembayaran");
@@ -154,7 +139,6 @@ function Payment() {
               Cart Total
             </label>
             <br />
-            <div className="totalHarga">{calculateTotalHarga()}</div>
           </div>
 
           <div id="input-metode2" class="input-metode">

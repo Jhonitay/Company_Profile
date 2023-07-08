@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Order.css";
 import { Link } from "react-router-dom";
 import Product from "../Product Box/product";
 import Listproduct from "../List/Listproduct";
 
 function Order() {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Mengatur scroll ke bagian atas halaman saat komponen dimuat ulang
+  }, []);
   const [selectedProducts, setSelectedProducts] = useState([]);
   const [quantities, setQuantities] = useState({});
   const [searchTerm, setSearchTerm] = useState("");

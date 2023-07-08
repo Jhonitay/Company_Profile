@@ -2,30 +2,14 @@ const {  Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Order extends Model {
     static associate(models) {
-      // define association here
-      // Order.belongsTo(models.Product, {
-      //   onDelete: "CASCADE",
-      //   onUpdate: "CASCADE",
-      //   foreignKey : {
-      //     name: "product_id"
-      //   },
-      //   as: "product",
-      // })
-      // Order.belongsTo(models.User, {
-      //   onDelete: "CASCADE",
-      //   onUpdate: "CASCADE",
-      //   foreignKey: {
-      //     name: "user_id"
-      //   },
-      //   as: "user",
-      // })
+
       this.Product = Order.belongsTo(models.Product, {
         onDelete: "CASCADE",
         onUpdate: "CASCADE",
         foreignKey: {
           name: "product_id",
-          // type: DataTypes.UUID,
-          // allowNull: true,
+          type: DataTypes.UUID,
+          allowNull: true,
         },
         as: "product"
       });
@@ -35,8 +19,8 @@ module.exports = (sequelize, DataTypes) => {
         onUpdate: "CASCADE",
         foreignKey: {
           name: "user_id",
-          // type: DataTypes.UUID,
-          // allowNull: true,
+          type: DataTypes.UUID,
+          allowNull: true,
         },
         as: "user"
       });
@@ -55,10 +39,6 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     userId: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    accountId: {
       type: DataTypes.STRING,
       allowNull: false,
     },

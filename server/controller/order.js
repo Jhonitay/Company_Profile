@@ -13,6 +13,8 @@ const createOrder = async (req, res) => {
       async (t) => {
         return await Order.create(
           {
+            productId: productId,
+            userId: userId,
             jumlah: jumlah,
             total: total,
           },
@@ -20,11 +22,25 @@ const createOrder = async (req, res) => {
         );
       }
     );
+    const response = {
+      code: 201,
+      status: "Created",
+      message: "Order has been successfully created",
+    };
 
     res.status(201).json(order);
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Failed to create order" });
+    const response = {
+      code: error.code,
+      status: error.status,
+      message: error.message,
+    };
+    // console.log(response);
+
+    return res.status(500).json(response);
+  }
+  finally {
+    await sequelize.close;
   }
 };
 

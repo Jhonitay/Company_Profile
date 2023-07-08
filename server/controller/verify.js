@@ -26,7 +26,7 @@ const verifyToken = (req, res, next) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     //console.log("ini request", req);
     console.log("userId: ", decoded.payload.userId);
-    req.userId = decoded.payload.userId;
+    req.body.userId = decoded.payload.userId;
     next();
   } catch (error) {
     //Kalo tokennya ga sinkron

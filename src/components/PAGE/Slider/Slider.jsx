@@ -6,36 +6,29 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 function Slider() {
   const data = [
     {
-      title: "Kopi Gula Aren Mantap kali 1",
-      subtitle: "TIME DISCOVER COFFE HOUSE 1",
+      title: "Buka Kedai Kopi Bareng Sugeng",
+
       image: "/images/mesinkopi.png",
     },
     {
-      title: "Kopi Gula Aren Mantap kali 2",
-      subtitle: "TIME DISCOVER COFFE HOUSE 2",
+      title: "Buka Kedai Kopi Bareng Sugeng",
+
       image: "/images/mesinespreso.png",
     },
     {
-      title: "Kopi Gula Aren Mantap kali 3",
-      subtitle: "TIME DISCOVER COFFE HOUSE 3",
+      title: "Buka Kedai Kopi Bareng Sugeng",
+
       image: "/images/ceretpremium.png",
     },
   ];
 
   return (
-    <Carousel
-      infiniteLoop
-      useKeyboardArrows
-      autoPlay
-      swipeable
-      emulateTouch
-      showStatus={false}
-    >
+    <Carousel infiniteLoop useKeyboardArrows autoPlay swipeable emulateTouch showStatus={false}>
       {data.map((item, index) => (
         <li key={index} className="content1">
           <div className="side align-center ">
             <div className="sideLeft1 ">
-              <h3 className="sideLeft1-cover">{item.title}</h3>
+              <p className="sideLeft1-cover">{item.title}</p>
               <h1 className="sideLeft1-text">{item.subtitle}</h1>
             </div>
           </div>

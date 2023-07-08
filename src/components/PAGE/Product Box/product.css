@@ -1,28 +1,64 @@
-* {
-  padding: 0;
-  margin: 0;
-}
 .product-box {
-  background-color: aliceblue;
+  background-color: rgb(255, 255, 255);
   border-radius: 5px;
   padding: 20px;
   width: 150px;
   height: 200px;
-  margin: 6px;
+  margin: 20px;
   display: inline-block;
-}
-
-.product-title {
-  font-weight: bold;
-  font-size: 18px;
-  margin-bottom: 10px;
 }
 
 .product-description {
   margin-bottom: 10px;
+  width: 235px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 16px;
 }
 
 .product-price {
   font-weight: bold;
   color: #4caf50;
+  font-size: 20px;
+  width: 235px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.product-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 275px;
+  height: 450px;
+}
+
+.addcart {
+  position: absolute;
+  bottom: 10px; /* Mengatur jarak dari bawah */
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-title {
+  font-size: 20px;
+  font-weight: 800;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.addcart {
+  font-size: 18px;
+}
+
+.product-image {
+  width: fit-content;
+  height: 235px;
 }

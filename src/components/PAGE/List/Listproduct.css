@@ -2,37 +2,60 @@
   padding: 0;
   margin: 0;
 }
-.list {
+
+.list1 {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
   height: max-content;
   height: 100%;
   display: flex;
   padding: 20px 0px;
   border-bottom: 1px solid black;
 }
+
 .icon {
-  width: 25%;
-  /* background-color: aqua; */
+  width: 80px;
+  height: 80px;
 }
+
+.icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .nama-produk {
+  padding-left: 10%;
   width: 40%;
-  /* background-color:aquamarine; */
+  font-weight: bold;
 }
+
 .jumlah {
   width: 15%;
-  /* background-color: bisque; */
+  font-weight: bold;
+  text-align: center;
+  margin-right: 5%;
 }
+
 .harga {
   width: 20%;
-  /* background-color: blueviolet; */
+  font-weight: bold;
+  margin-right: 5%;
+}
+
+.totalHarga {
+  width: 20%;
+  font-weight: bold;
 }
 
 .hapus-button {
-  background-color: #f44336;
-  color: white;
+  width: 10%;
+  background-color: #ff0000;
+  color: #fff;
   border: none;
   padding: 5px 10px;
   margin-left: 10px;
   cursor: pointer;
   border-radius: 4px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }

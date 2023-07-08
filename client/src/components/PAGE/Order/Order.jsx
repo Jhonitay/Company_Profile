@@ -25,9 +25,9 @@ function Order() {
     }
   };
 
-  const handleButtonClick = () => {
-    handleSearch();
-  };
+  // const handleButtonClick = () => {
+  //   handleSearch();
+  // };
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {

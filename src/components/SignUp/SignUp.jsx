@@ -51,6 +51,7 @@ const SignUp = () => {
     });
   }
 
+
   return (
     <div className="page">
       <div className="cover1">

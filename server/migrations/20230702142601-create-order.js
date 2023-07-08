@@ -1,21 +1,20 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Orders', {
-      order_id: {
+    await queryInterface.createTable('orders', {
+      orderId: {
         type : Sequelize.UUID,
         defaultValue : Sequelize.UUIDV4,
         allowNull: false,
         primaryKey: true,
-        unique : true,
         field : "order_id",
       },
-      product_id: {
+      productId: {
         type: Sequelize.UUID,
         allowNull: false,
         field: "product_id",
       },
-      user_id: {
+      userId: {
         type: Sequelize.UUID,
         allowNull: false,
         field: "user_id",
@@ -67,6 +66,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Orders');
+    await queryInterface.dropTable('orders');
   }
 };

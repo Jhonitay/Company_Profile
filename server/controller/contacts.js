@@ -5,10 +5,9 @@ const db = require("../config/config.json")[env];
 
 const createcontacts = async (req, res) => {
   const sequelize = new Sequelize(db);
-  
+  await sequelize.authenticate();
   try {
-    const { name, email, phone_number, message } = req.body;
-
+    const { name, email, phoneNumber, message } = req.body;
     const newComment = await sequelize.transaction(
       { isolationLevel: Transaction.ISOLATION_LEVELS.READ_COMMITTED },
       async (t) => {
@@ -16,8 +15,8 @@ const createcontacts = async (req, res) => {
           {
             name: name,
             email: email,
-            phone_number: phone_number,
-            message: message
+            phoneNumber: phoneNumber,
+            message: message,
           },
           { transaction: t }
         );

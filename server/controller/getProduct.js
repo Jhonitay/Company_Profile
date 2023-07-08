@@ -1,8 +1,10 @@
-const { Product, Order} = require("../models");
+const { Product} = require("../models");
 
-const  getproduct = async (req, res) => {
+const  getProduct = async (req, res) => {
   console.log("Request profile received!");
-  const product = await Order.findAll({ where: { product_id: req.body.product_id } });
+
+
+  const product = await Product.findOne({ where: { name: req.body.name} });
   if (!product) {
     const error = new Error("Product not found!");
     error.code = "404";
@@ -18,17 +20,16 @@ const  getproduct = async (req, res) => {
     code: "200",
     status: "OK",
     message: "Product found!",
-    user: {
-      id: product.product_id,
+    product: {
       name: product.name,
       dimensi: product.dimensi,
-      berat : product.berat,
-      stock : product.stock,
-      jenis : product.jenis,
+      berat: product.berat,
+      stok: product.stok,
+      jenis: product.jenis,
     },
   };
   console.log(response);
   return res.status(200).json(response);
 };
 
-module.exports = { getproduct } ;
+module.exports = { getProduct } ;

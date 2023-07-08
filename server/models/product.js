@@ -13,49 +13,41 @@ module.exports = (sequelize, DataTypes) => {
         onUpdate: "CASCADE",
         foreignKey: {
           name: "product_id",
-          type: DataTypes.UUID,
-          allowNull: true,
         },
       });
     }
   }
   Product.init({
-    product_id: {
+    productId: {
       type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
         allowNull: false,
-        unique: true,
-        field: "product_id",
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      field: "name",
     },
     dimensi: {
       type: DataTypes.STRING,
       allowNull: false,
-      field: "dimensi",
     },
     berat: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      field: "berat",
     },
     stok: {
       type: DataTypes.STRING,
       allowNull: false,
-      field: "stock",
     },
     jenis: {
       type: DataTypes.STRING,
       allowNull: false,
-      field: "jenis",
     },
   }, {
     sequelize,
-    modelName: 'Product',
+    modelName: "Product",
+    tableName: "products",
     underscored: true
   });
   return Product;

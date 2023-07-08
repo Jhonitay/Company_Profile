@@ -1,13 +1,12 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Products', {
-      product_id: {
+    await queryInterface.createTable('products', {
+      productId: {
         type: Sequelize.UUID,
           defaultValue: Sequelize.UUIDV4,
           primaryKey: true,
           allowNull: false,
-          unique: true,
           field: "product_id",
       },
       name: {
@@ -28,7 +27,7 @@ module.exports = {
       stok: {
         type: Sequelize.STRING,
         allowNull: false,
-        field: "stock",
+        field: "stok",
       },
       jenis: {
         type: Sequelize.STRING,
@@ -50,6 +49,6 @@ module.exports = {
       });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Products');
+    await queryInterface.dropTable('products');
   }
 };

@@ -1,6 +1,4 @@
-const {
-  Model
-} = require('sequelize');
+const {  Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Contacts extends Model {
     /**
@@ -13,37 +11,33 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Contacts.init({
-    contacts_id: {
+    contactsId: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
       allowNull: false,
-      unique: true,
-      field: "contacts_id",
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      field: "name",
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      field: "email",
     },
-    phone_number: {
+    phoneNumber: {
       type: DataTypes.STRING,
       allowNull: false,
-      field: "phone_number",
     },
     message: {
       type: DataTypes.TEXT,
       allowNull: false,
-      field: "message",
     },
   }, {
     sequelize,
-    modelName: 'contacts',
+    modelName: "Contacts",
+    tableName: "contacts",
+    underscored: true
   });
   return Contacts;
 };

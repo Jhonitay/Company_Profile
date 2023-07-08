@@ -167,7 +167,7 @@
   height: max-content;
   padding: 20px 50px;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .contentcheckout {

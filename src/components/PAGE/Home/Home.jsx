@@ -68,7 +68,7 @@ function Home() {
           <li class="content3">
             {/* content 3 */}
             <div class="sideRight11 side align-center item-center">
-              <img src="/images/imghome.jpg" alt="IMG" ></img>
+              
             </div>
             <div class="sidehome">
               <div class="sideLeft3 ">

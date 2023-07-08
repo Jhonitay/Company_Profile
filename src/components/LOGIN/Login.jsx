@@ -61,7 +61,7 @@ function Login() {
         <div className="isi">
           <input
             type="text"
-            placeholder="Username / Email"
+            placeholder=" Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />{" "}
@@ -72,14 +72,19 @@ function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+        <div className="Sign">
+            <p>Belum Punya account?</p>
+            <Link to="/SignUp" className="Sig">
+            SignUp
+        </Link>
         </div>
+        </div>
+        
         <button className="Login-btn" onClick={handleLogin}>
           Login
         </button>
-        <p className="Text">Atau</p>
-        <Link to="/SignUp" className="SignUp-btn">
-          SignUp
-        </Link>
+        
+        
       </div>
     </div>
   );

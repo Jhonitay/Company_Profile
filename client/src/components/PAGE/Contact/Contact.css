@@ -6,8 +6,8 @@
 .container {
   padding-left: 80px;
   padding-right: 80px;
-  margin-top: 180px;
-  margin-bottom: 180px;
+  margin-top: 150px;
+  margin-bottom: 150px;
 }
 
 .wrapper {
@@ -33,7 +33,7 @@
   display: flex;
   justify-content: last baseline;
   align-items: center;
-  gap: 65px;
+  gap: 24px;
 }
 
 .bg_button_contact {
@@ -70,6 +70,8 @@
   align-items: center;
   border-radius: 10px;
   background-color: #c7a17a;
+  cursor: pointer;
+  border: none;
 }
 
 .icon_pesan {
@@ -143,9 +145,11 @@ textarea {
   grid-area: 3 / 1 / 4 / 5;
 }
 .maps {
-  margin-top: 160px;
-  height: 500px;
-  width: 1240px;
+  
+  margin-top: 75px;
+  /* margin-bottom: 50px; */
+  height: 600px;
+  width: 1170px;
 }
 
 .maps iframe {

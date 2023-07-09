@@ -1,12 +1,43 @@
+// import { useRef } from "react";
 import "./Contact.css";
+import { useState } from "react";
+import Swal from "sweetalert2";
+
+function custom_alert(e) {
+  Swal.fire({
+    icon: "success",
+    title: "Terimakasih Telah Menghubungi Kami",
+    iconColor: "#c7a17a",
+    // confirmButtonColor: "#c7a17a",
+    showConfirmButton: false,
+    timer: 2000,
+  });
+}
 
 function Contact() {
+  // const nameInput = useRef("");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  // const [emai, setEmail] = useState("");
+
+  const handleChangeName = (e) => {
+    const result = e.target.value.replace(/[^a-z]/gi, "");
+
+    setName(result);
+  };
+
+  const handleChangePhone = (e) => {
+    const result = e.target.value.replace(/[^0-9]/gi, "");
+
+    setPhone(result);
+  };
+
   return (
     <>
       <div className="bg_button_contact">
-        <a className="button_contact" href=" ">
+        <div className="button_contact" href=" ">
           Contact Us
-        </a>
+        </div>
       </div>
       <div className="container">
         <div className="wrapper">
@@ -19,7 +50,7 @@ function Contact() {
                 <div className="text">
                   <h3>CONTACT US</h3>
                   <p>
-                    web123@gmail.com
+                    sugeng@gmail.com
                     <br />
                     089542624923
                   </p>
@@ -51,14 +82,14 @@ function Contact() {
               </div>
             </div>
             <form action="" className="grid-container">
-              <input type="text" id="name" placeholder="Your Name :" className="name" />
+              <input type="text" id="name" placeholder="Your Name :" data-type="data" value={name} onChange={handleChangeName} className="name" />
               <input type="text" id="mail" placeholder="Your Mail :" className="mail" />
-              <input type="text" id="tlp" placeholder="Your Phone :" className="tlp" />
+              <input type="text" id="tlp" placeholder="Your Phone :" className="tlp" value={phone} onChange={handleChangePhone} />
               <textarea name="message" id="message" className="message" cols="30" rows="10" placeholder="Your Message :"></textarea>
             </form>
-            <a href=" " className="send_button">
+            <button href="#" onClick={custom_alert} className="send_button">
               SEND MESSAGE
-            </a>
+            </button>
           </div>
           <div className="maps">
             <h1>Maps</h1>

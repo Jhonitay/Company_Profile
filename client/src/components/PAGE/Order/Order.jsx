@@ -14,13 +14,15 @@ function Order() {
   const [searchResults, setSearchResults] = useState([]);
   const [cartProducts, setCartProducts] = useState([]);
 
+  useEffect(() => {
+    window.scrollTo(0, 100); // Mengatur scroll ke bagian atas halaman saat komponen dimuat ulang
+  }, [selectedProducts]);
+
   const handleSearch = () => {
     if (searchTerm.trim() === "") {
       setSearchResults(productList);
     } else {
-      const filteredProducts = productList.filter((product) =>
-        product.title.toLowerCase().includes(searchTerm.toLowerCase())
-      );
+      const filteredProducts = productList.filter((product) => product.title.toLowerCase().includes(searchTerm.toLowerCase()));
       setSearchResults(filteredProducts);
     }
   };
@@ -69,7 +71,7 @@ function Order() {
 
   const productList = [
     {
-      title: "Product 1",
+      title: "Espresso Portafilter",
       description: "Description 1 ",
       price: 61000000,
       image: "http://localhost:3000/images/peraskopi.png",
@@ -129,6 +131,7 @@ function Order() {
     const cartProduct = selectedProducts.map((product) => {
       const selectedProduct = productList.find((p) => p.title === product);
       const price = selectedProduct ? selectedProduct.price : 0;
+
       return {
         name: product,
         price: price,
@@ -137,10 +140,7 @@ function Order() {
       };
     });
 
-    setCartProducts((prevCartProducts) => [
-      ...prevCartProducts,
-      ...cartProduct,
-    ]);
+    setCartProducts((prevCartProducts) => [...prevCartProducts, ...cartProduct]);
 
     // Reset state selectedProducts dan quantities setelah dipindahkan ke keranjang
     setSelectedProducts([]);
@@ -162,46 +162,21 @@ function Order() {
         </div>
         <div className="segment2">
           <div id="search-form">
-            <input
-              type="text"
-              id="search-input"
-              placeholder="Enter your search term"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              onKeyPress={handleKeyPress}
-            />
+            <input type="text" id="search-input" placeholder="Enter your search term" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} onKeyPress={handleKeyPress} />
           </div>
         </div>
         <div className="segment3 flex">
           <div className="side-product">
             {searchTerm === "" ? (
               productList.map((product, index) => (
-                <div
-                  key={index}
-                  className="product"
-                  onClick={() => selectProduct(product.title)}
-                >
-                  <Product
-                    title={product.title}
-                    description={product.description}
-                    price={`Rp${product.price}`}
-                    image={product.image}
-                  />
+                <div key={index} className="product" onClick={() => selectProduct(product.title)}>
+                  <Product title={product.title} description={product.description} price={`Rp${product.price}`} image={product.image} />
                 </div>
               ))
             ) : searchResults.length > 0 ? (
               searchResults.map((product, index) => (
-                <div
-                  key={index}
-                  className="product"
-                  onClick={() => selectProduct(product.title)}
-                >
-                  <Product
-                    title={product.title}
-                    description={product.description}
-                    price={`Rp${product.price}`}
-                    image={product.image}
-                  />
+                <div key={index} className="product" onClick={() => selectProduct(product.title)}>
+                  <Product title={product.title} description={product.description} price={`Rp${product.price}`} image={product.image} />
                 </div>
               ))
             ) : (
@@ -211,7 +186,7 @@ function Order() {
 
           <div className="side-right box-keterangan">
             <div className="spesifikasi">
-              <h3>specification</h3>
+              <h3 className="font600">Specification</h3>
               <div className="flex spek">
                 <p className="judul">nama </p>
                 <p>:</p>
@@ -240,9 +215,7 @@ function Order() {
               {selectedProducts.length > 0 && (
                 <>
                   {selectedProducts.map((product, index) => {
-                    const selectedProduct = productList.find(
-                      (p) => p.title === product
-                    );
+                    const selectedProduct = productList.find((p) => p.title === product);
                     const price = selectedProduct ? selectedProduct.price : 0;
                     return (
                       <div key={index} className="fl spek">
@@ -255,38 +228,22 @@ function Order() {
                           <div className="product-info">
                             <p className="judul">Price</p>
                             <p>:</p>
-                            <p className="keterangan">
-                              {(quantities[product] || 1) * price}
-                            </p>
+                            <p className="keterangan">{(quantities[product] || 1) * price}</p>
                           </div>
                         </div>
                         <div>
                           <div className="button-group">
-                            <button
-                              className="remove-button"
-                              onClick={() => removeProduct(product)}
-                            >
+                            <button className="remove-button" onClick={() => removeProduct(product)}>
                               Remove
                             </button>
-                            <button
-                              className="btn-quantity"
-                              onClick={() => decreaseQuantity(product)}
-                            >
+                            <button className="btn-quantity" onClick={() => decreaseQuantity(product)}>
                               -
                             </button>
-                            <p className="quantity">
-                              {quantities[product] || 1}
-                            </p>
-                            <button
-                              className="btn-quantity"
-                              onClick={() => increaseQuantity(product)}
-                            >
+                            <p className="quantity">{quantities[product] || 1}</p>
+                            <button className="btn-quantity" onClick={() => increaseQuantity(product)}>
                               +
                             </button>
-                            <button
-                              className="move-to-cart-button"
-                              onClick={moveToCart}
-                            >
+                            <button className="move-to-cart-button" onClick={moveToCart}>
                               Move to Cart
                             </button>
                           </div>
@@ -300,11 +257,7 @@ function Order() {
             <div className="gambar-product">
               {selectedProducts.map((product, index) => (
                 <div key={index}>
-                  <img
-                    src={productList.find((p) => p.title === product)?.image}
-                    alt="Product"
-                    className="product-image"
-                  />
+                  <img src={productList.find((p) => p.title === product)?.image} alt="Product" className="product-image" />
                 </div>
               ))}
             </div>
@@ -321,13 +274,7 @@ function Order() {
               <div className="rmv"></div>
             </div>
             {cartProducts.map((product, index) => (
-              <Listproduct
-                key={index}
-                product={product}
-                onRemove={removeProductFromCart}
-                cartProducts={cartProducts}
-                setCartProducts={setCartProducts}
-              />
+              <Listproduct key={index} product={product} onRemove={removeProductFromCart} cartProducts={cartProducts} setCartProducts={setCartProducts} />
             ))}
           </div>
         </div>

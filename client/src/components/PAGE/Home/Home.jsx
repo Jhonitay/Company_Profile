@@ -9,62 +9,6 @@ function Home() {
       <div>
         <ul className="contain">
           <Slider />
-
-          {/* <li class="content2">
-           
-            <div class="side">
-              <div class="flex side-content2">
-                <li class="sideLeft2 align-center item-center">
-                  <div class="">
-                    <img alt="img" />
-                    <h3>Service</h3>
-                  </div>
-                </li>
-                <li class="sideLeft2 align-center item-center">
-                  <div class="">
-                    <img alt="img" />
-                    <h3>Service</h3>
-                  </div>
-                </li>
-                <li class="sideLeft2 align-center item-center">
-                  <div class="">
-                    <img alt="img" />
-                    <h3>Service</h3>
-                  </div>
-                </li>
-              </div>
-              <div class="flex">
-                <li class="sideLeft2 align-center item-center">
-                  <div class="">
-                    <img alt="img" />
-                    <h3>Service</h3>
-                  </div>
-                </li>
-                <li class="sideLeft2 align-center item-center">
-                  <div class="">
-                    <img alt="img" />
-                    <h3>Service</h3>
-                  </div>
-                </li>
-                <li class="sideLeft2 align-center item-center">
-                  <div class="">
-                    <img alt="img" />
-                    <h3>Service</h3>
-                  </div>
-                </li>
-              </div>
-            </div>
-            <div class="side align-center item-center">
-              <div class="sideRight2 ">
-                <h3 class="test">Our coffee is hotter than Angelina Jolie.</h3>
-                <p>
-                  Selamat datang di kedai kopi kami, tempat di mana cinta dan hangatnya suasana bertemu dalam secangkir kopi. Kami bangga mempersembahkan pengalaman kopi yang tak tertandingi, yang tak hanya memenuhi kebutuhanmu akan rasa,
-                  tetapi juga menyentuh jiwa.
-                </p>
-              </div>
-            </div>
-          </li> */}
-
           <li class="content3">
             {/* content 3 */}
             <div class="sideRight11 side align-center item-center">

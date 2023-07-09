@@ -114,7 +114,8 @@
   justify-content: center;
 }
 
-.side-right {
+.font600{
+  font-weight: 600;
 }
 
 .box-keterangan {

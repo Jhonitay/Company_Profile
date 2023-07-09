@@ -1,0 +1,54 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  height: max-content;
+}
+
+.content1 {
+  height: 90vh;
+  width: 100%;
+  max-width: 100%;
+  /* background-color: aqua; */
+  display: flex;
+  background-image: url("../../../../public/images/homebean.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.side {
+  width: 50%;
+  height: 99%;
+  margin: 1px;
+  list-style-type: none;
+}
+
+.sideLeft1 {
+  width: 100%;
+  height: 200px;
+  margin-left: 200px;
+}
+
+.sideLeft1-cover {
+  font-size: 60px;
+  text-align: start;
+  font-weight: bolder;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.sideLeft1-text {
+  font-size: 30px;
+}
+
+.sideRight1 {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sideRight1 img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}

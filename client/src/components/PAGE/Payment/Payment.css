@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.containe {
+  justify-content: center;
+  display: flex;
+  height: 100%;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+
+.wrapperr {
+  height: 100%;
+  background-color: #ffffff;
+  width: 40%;
+  padding: 25px 50px 25px 25px;
+  justify-content: center;
+  border: 2px solid #f4f1ee;
+  border-radius: 10px;
+}
+
+.wrapper h2 {
+  padding-bottom: 5px;
+}
+
+.input-metode {
+  display: none;
+  margin-bottom: 10px;
+}
+
+#input-metode1 {
+  display: block;
+}
+
+.label {
+  font-size: 18px;
+}
+
+.input_box {
+  margin-top: 10px;
+  width: 100%;
+  margin-right: 12px;
+  position: relative;
+  background-color: #f4f1ee;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.input_expired {
+  margin-top: 10px;
+  width: 20%;
+  margin-right: 12px;
+  background-color: #f4f1ee;
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+}
+
+.total {
+  margin-top: 10px;
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f4f1ee;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.total p {
+  margin: 0;
+  text-align: center;
+}
+
+.button {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn {
+  margin-top: 10px;
+  border-radius: 6px;
+  padding: 15px;
+  font-size: 14px;
+  width: 40%;
+  background-color: #c7a17a;
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+}
+
+.mr-5 {
+  margin-right: 5px;
+}
+
+.ml-4 {
+  margin-left: 5px;
+}
+
+.mbb-5 {
+  margin-bottom: 10px;
+}

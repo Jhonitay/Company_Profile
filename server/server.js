@@ -1,8 +1,9 @@
 const express =  require("express");
-const newRoute =  require("./routes/newRoute.js");
-const { router } =  require("./routes/index.js");
+// const newRoute =  require("./routes/newRoute.js");
+const withLogin =  require("./routes/withlogin");
+const noLogin = require("./routes/noLogin")
 const cors = require("cors");
-const port = 5000;
+const { verifyToken } = require("./controller/verify");
 const app = express();
 
 // try {
@@ -13,7 +14,7 @@ const app = express();
 // }
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:4173","http://localhost:3000"],
+    origin: ["http://localhost:3000"],
     credentials: true,
   })
 );
@@ -25,7 +26,11 @@ app.get("/test", (req, res) => {
   res.send("Test route");
 });
 
-app.use("/", newRoute);
+app.use(noLogin)
+
+app.use(verifyToken)
+
+app.use(withLogin)
 
 
 app.get("/about", (req, res) => {
@@ -33,8 +38,8 @@ app.get("/about", (req, res) => {
   console.log("tes")
 });
 
-app.listen(port, () => {
-  console.log(port);
+app.listen(5000, () => {
+  console.log("Server sedang berjalan di port 5000");
 });
 // app.get("/", (req, res) => {
 //   res.send("Hello World! Hello");
@@ -44,5 +49,6 @@ app.listen(port, () => {
 //   res.send("Hello World! Hello");
 //   console.log("tes")
 // });
+
 
 

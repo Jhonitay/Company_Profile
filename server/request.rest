@@ -18,3 +18,20 @@ Content-Type: application/json
 
 
 }
+###
+POST  http://127.0.0.1:5000/contacts
+Content-Type: application/json
+
+{
+    "name": "yoga",
+    "email": "berat@gmail.com",
+    "phoneNumber": "333333333",
+    "message": "memek datanng teman bubar"
+}
+###
+POST  http://127.0.0.1:5000/getContacts
+Content-Type: application/json
+
+{
+    "name":"yoga"
+}

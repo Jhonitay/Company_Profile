@@ -1,14 +1,12 @@
-const { Product} = require("../models");
+const { Contacts } = require("../models");
 
-const getProduct = async (req, res) => {
+const  getContacts = async (req, res) => {
   console.log("Request profile received!");
-
-
-  const product = await Product.findAll();
-  if (!product) {
+  const contacts = await Contacts.findAll();
+  if (!contacts) {
     const error = new Error("Product not found!");
     error.code = "404";
-    error.status = "Product not found!";
+    error.status = "Contact not found!";
     const response = {
       code: error.code,
       status: error.status,
@@ -19,11 +17,11 @@ const getProduct = async (req, res) => {
   const response = {
     code: "200",
     status: "OK",
-    message: "Product found!",
-    product: { product },
+    message: "Contact found!",
+    contacts: { contacts },
   };
   console.log(response);
-  return res.status(200).json(response); 
+  return res.status(200).json(response);
 };
 
-module.exports = { getProduct } ;
+module.exports = { getContacts } ;

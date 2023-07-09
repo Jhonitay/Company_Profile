@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.page {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cover {
+    background-color: white;
+    width: 30em;
+    height: 30em;
+    position: relative;
+    border-radius: 16px;
+    box-shadow: 0 3px 24px  rgb(100, 156, 156);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+.isi {
+  
+    height: 128px; 
+    width: 80%;
+    padding-bottom: 0px;
+  
+    height: 32%;
+
+}
+.Sign{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.Sig{
+    margin-left: 10px;
+}
+
+.isi input{
+    border: none;
+    background-color:rgb(229, 226, 226);
+    height: 50px;
+    width: 100%;
+    border-radius: 50px;
+    text-align: center;
+    display: flex;
+    
+}
+
+
+
+
+
+
+
+.Login-btn{
+    border: 1px solid black;
+    width: 40%;
+    height: 48px;
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    border-radius: 50px;
+    cursor: pointer;
+
+}
+
+
+
+
+
+.Login-btn:hover{
+    transform: scale(1.25);
+}
+
+
+.akun{
+    /* border: 1px solid black; */
+    width: 100%;
+    display: flex;
+    /* /* align-items: center; */
+    justify-content: center; 
+    
+}
+
+.akun p{
+    /* margin-top: 12px;
+    text-align: center; */
+    margin-right: 5px;
+
+    
+}
+
+
+

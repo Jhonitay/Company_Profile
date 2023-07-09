@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.footer{
+    height: max-content;
+    background-color: black;
+    width: 100%;
+}
+.phone{
+    height: 150px;
+    width: 100%;
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+}
+.phone p{
+    margin-left: 15%;
+    color: white;
+}
+.bawahan{
+    border-top: 1px solid white;
+    padding-top: 10px;
+    padding-bottom :20px;
+    height: 50px;
+    width: 100%;
+    /* background-color: aquamarine; */
+    display: flex;
+    color: white;
+    justify-content: space-between;
+}
+.icons{
+    margin-right: 10%;
+    font-size: 24px;
+    color:  bisque;
+}
+.coffie{
+    margin-left: 10%;
+    
+}
+.sosmed{
+    margin-right: 1%;
+    display: flex;
+    width: 15%;
+}
+.sosmed img{
+    margin-right: 2%;
+}
+

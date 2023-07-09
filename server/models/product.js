@@ -24,28 +24,20 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         allowNull: false,
     },
-    name: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    dimensi: {
+    description: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    berat: {
+    price: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    stok: {
+    image: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    jenis: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    harga: {
-      type: DataTypes.INTEGER,
       allowNull: false,
     },
   }, {

@@ -9,35 +9,25 @@ module.exports = {
           allowNull: false,
           field: "product_id",
       },
-      name: {
+      title: {
         type: Sequelize.STRING,
         allowNull: false,
-        field: "name",
+        field: "title",
       },
-      dimensi: {
+      description: {
         type: Sequelize.STRING,
         allowNull: false,
-        field: "dimensi",
+        field: "description",
       },
-      berat: {
+      price: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        field: "berat",
+        field: "price",
       },
-      stok: {
+      image: {
         type: Sequelize.STRING,
         allowNull: false,
-        field: "stok",
-      },
-      jenis: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        field: "jenis",
-      },
-      harga: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        field: "harga",
+        field: "image",
       },
       createdAt: {
         allowNull: false,

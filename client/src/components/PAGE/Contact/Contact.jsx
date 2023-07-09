@@ -15,6 +15,9 @@ function custom_alert(e) {
 }
 
 function Contact() {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Mengatur scroll ke bagian atas halaman saat komponen dimuat ulang
+  }, []);
   // const nameInput = useRef("");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");

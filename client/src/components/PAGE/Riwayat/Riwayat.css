@@ -1,0 +1,87 @@
+.bungkus1riwayat {
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  background-color: bisque;
+}
+
+.bungkusjudul {
+  width: 60%;
+  height: 80px;
+  background-color: aqua;
+}
+
+.judulriwayat {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+.kotakisi {
+  background-color: blue;
+  width: 70%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.isiriwayat {
+  background-color: bisque;
+  width: 80%;
+  height: 80%;
+}
+
+.nama1 {
+  width: 50%;
+  height: 15%;
+  background-color: blueviolet;
+}
+
+.bungkus2riwayat {
+  width: 100%;
+  height: 80%;
+  margin-top: 18px;
+  display: flex;
+  background-color: cadetblue;
+}
+
+.bungkusfotoriwayat {
+  width: 200px;
+  height: 100%;
+  background-color: rgb(252, 13, 172);
+}
+
+.bungkus3 {
+  width: 400px;
+  height: 100%;
+  margin-left: 15px;
+  display: flex;
+  background-color: rgb(145, 1, 133);
+  flex-direction: column;
+}
+
+.bungkusnamajenis {
+  width: 400px;
+  height: 20px;
+  display: flex;
+  background-color: cyan;
+  margin-bottom: 10px;
+}
+
+.namariwayat {
+  width: 100px;
+  height: 20px;
+  background-color: black;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.namanyariwayat {
+  width: 200px;
+  height: 20px;
+  background-color: black;
+}

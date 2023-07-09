@@ -34,7 +34,18 @@ h1 {
     height: 128px; 
     width: 80%;
     padding-bottom: 0px;
+  
+    height: 32%;
 
+}
+.Sign{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.Sig{
+    margin-left: 10px;
 }
 
 .isi input{
@@ -45,6 +56,7 @@ h1 {
     border-radius: 50px;
     text-align: center;
     display: flex;
+    
 }
 
 
@@ -67,26 +79,14 @@ h1 {
 
 }
 
-.SignUp-btn{
-    border: 1px solid black;
-    width: 40%;
-    height: 48px;
-    background-color: bisque;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
-    border-radius: 50px;
-    cursor: pointer;
 
-}
+
+
 
 .Login-btn:hover{
     transform: scale(1.25);
 }
-.SignUp-btn:hover {
-    transform: scale(1.25);
-}
+
 
 .akun{
     /* border: 1px solid black; */
@@ -106,56 +106,4 @@ h1 {
 }
 
 
-/* .Login-btn{
-    border: 1px solid blue;
-    width: 40%;
-    height: 90%;
-    background-color: bisque;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 05s;
-    border-radius: 4px;
-    cursor: pointer;
-    
-}
 
-.SignUp-btn{
-    border: 1px solid blue;
-    width: 40%;
-    height: 90%;
-    background-color: bisque;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 05s;
-    border-radius: 4px;
-    cursor: pointer;
-    
-}
-
-.Login-btn:hover {transform: scale(1.25);}
-
-.Text{
-    
-    height: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-input {
-    border: none;
-    background-color:rgb(229, 226, 226);
-    height: 64px;
-    width: 80%;
-    border-radius: 4px;
-    text-align: center;
-}
-
-input:focus {
-    outline-color: rgb(32, 177, 255);
-
-}   
-
-*/

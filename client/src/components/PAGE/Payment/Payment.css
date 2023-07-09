@@ -28,16 +28,15 @@
 
 .input-metode {
   display: none;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 #input-metode1 {
   display: block;
 }
 
-
 .label {
-  font-size: larger;
+  font-size: 18px;
 }
 
 .input_box {
@@ -46,18 +45,20 @@
   margin-right: 12px;
   position: relative;
   background-color: #f4f1ee;
-  padding: 5px;
+  padding: 10px;
   border: none;
   border-radius: 5px;
+  font-size: 16px;
 }
 
 .input_expired {
   margin-top: 10px;
-  width: 15%;
+  width: 20%;
   margin-right: 12px;
   background-color: #f4f1ee;
   padding: 10px;
   border: none;
+  font-size: 16px;
 }
 
 .total {
@@ -68,25 +69,25 @@
   justify-content: space-between;
   background-color: #f4f1ee;
   border-radius: 5px;
-  align-items: center; /* Menyatukan elemen secara vertikal di tengah */
+  align-items: center;
 }
 
 .total p {
   margin: 0;
-  text-align: center; /* Mengatur teks menjadi rata tengah */
+  text-align: center;
 }
 
 .button {
   width: 100%;
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
 }
 
 .btn {
   margin-top: 10px;
   border-radius: 6px;
   padding: 15px;
-  font-size: small;
+  font-size: 14px;
   width: 40%;
   background-color: #c7a17a;
   color: #ffffff;
@@ -97,10 +98,11 @@
 .mr-5 {
   margin-right: 5px;
 }
+
 .ml-4 {
   margin-left: 5px;
 }
 
 .mbb-5 {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }

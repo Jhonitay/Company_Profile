@@ -5,7 +5,8 @@
 }
 
 .content1 {
-  height: 450px;
+  height: 90vh;
+  width: 100%;
   /* background-color: aqua; */
   display: flex;
   background-image: url("../../../../public/images/homebean.png");

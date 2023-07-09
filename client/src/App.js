@@ -10,6 +10,7 @@ import PageTeam from "./pages/PageTeam";
 import PageLogin from "./pages/PageLogin";
 import PageSignUp from "./pages/PageSignUp";
 import PagePayment from "./pages/PagePayment";
+import PageRiwayat from "./pages/PageRiwayat";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/Login" element={<PageLogin />} />
           <Route path="/SignUp" element={<PageSignUp />} />
           <Route path="/Payment" element={<PagePayment />} />
+          <Route path="/Riwayat" element={<PageRiwayat />} />
         </Routes>
       </Router>
     </>

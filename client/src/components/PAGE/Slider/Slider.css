@@ -7,9 +7,13 @@
 .content1 {
   height: 90vh;
   width: 100%;
+  max-width: 100%;
   /* background-color: aqua; */
   display: flex;
   background-image: url("../../../../public/images/homebean.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .side {

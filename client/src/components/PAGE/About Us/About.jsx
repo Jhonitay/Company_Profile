@@ -1,9 +1,20 @@
 import "./About.css";
 import"./About";
 
+import Sliderkomen from "../Sliderkomen/Sliderkomen";
+
+// import { Carousel } from "react-responsive-carousel";
+// import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 
 
 function About() {
+
+  // const [contacts, setContacts] = useState([]);
+
+  
+  
+
   return (
     <>
       <div>
@@ -59,45 +70,20 @@ function About() {
           <div class="tes">
             <h2 class="moni">Testemoni</h2>
             <div class="Komen">
-              <div class="grid">
-                <h2>Yogi</h2>
+              
+              
 
-                <p class="dari">Kepala Suku dari Sugeng Rawuh</p>
+{/* 
+            {contacts.map((contacts)=>(
+                <div className="grid" key={contacts.contacts_Id}>
+                <h2>{contacts.name}</h2>
+                <p class="dari">{contacts.email} </p>
                 <p>
-                  "Kedai kopi ini adalnu yang mereka tawarkan. Stafnya
-                  juga ramah dan penuh perhatian. Saya pasti akan kembali lagi!"
+                   {contacts.message}
                 </p>
               </div>
-              <div className="grid">
-                <h2>Yogi</h2>
-                <p class="dari">Kepala Suku dari Sugeng Rawuh</p>
-                <p>
-                  "Kedai kopi ini adalah tempat yang luar biasa! Kopinya
-                  berkualitas tinggi dan rasanya luar biasa. Saya benar-benar
-                  terkesan dengan variasi menu yang mereka tawarkan. Stafnya
-                  juga ramah dan penuh perhatian. Saya pasti akan kembali lagi!"
-                </p>
-              </div>
-              <div className="grid">
-                <h2>Yogi</h2>
-                <p class="dari">Kepala Suku dari Sugeng Rawuh</p>
-                <p>
-                  "Kedai kopi ini adalah tempat yang luar biasa! Kopinya
-                  berkualitas tinggi dan rasanya luar biasa. Saya benar-benar
-                  terkesan dengan variasi menu yang mereka tawarkan. Stafnya
-                  juga ramah dan penuh perhatian. Saya pasti akan kembali lagi!"
-                </p>
-              </div>
-              <div className="grid">
-                <h2>Yogi</h2>
-                <p class="dari">Kepala Suku dari Sugeng Rawuh</p>
-                <p>
-                  "Kedai kopi ini adalah tempat yang luar biasa! Kopinya
-                  berkualitas tinggi dan rasanya luar biasa. Saya benar-benar
-                  terkesan dengan variasi menu yang mereka tawarkan. Stafnya
-                  juga ramah dan penuh perhatian. Saya pasti akan kembali lagi!"
-                </p>
-              </div>
+            ))}              */}
+            <Sliderkomen/>
             </div>
           </div>
 

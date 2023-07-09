@@ -1,13 +1,24 @@
 // import { useRef } from "react";
 import "./Contact.css";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import Swal from "sweetalert2";
-
+import axios from "axios";
 function custom_alert(e) {
   Swal.fire({
     icon: "success",
     title: "Terimakasih Telah Menghubungi Kami",
-    iconColor: "#c7a17a",
+    iconColor: "#02cc0c",
+    // confirmButtonColor: "#c7a17a",
+    showConfirmButton: false,
+    timer: 2000,
+  });
+}
+
+function error_alert(e) {
+  Swal.fire({
+    icon: "error",
+    title: "Sign Up gagal",
+    iconColor: "#b83d3d",
     // confirmButtonColor: "#c7a17a",
     showConfirmButton: false,
     timer: 2000,
@@ -18,15 +29,35 @@ function Contact() {
   useEffect(() => {
     window.scrollTo(0, 0); // Mengatur scroll ke bagian atas halaman saat komponen dimuat ulang
   }, []);
-  // const nameInput = useRef("");
+
   const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  // const [emai, setEmail] = useState("");
+  const [phoneNumber, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleChangeName = (e) => {
-    const result = e.target.value.replace(/[^a-z]/gi, "");
+    const result = e.target.value.replace(/[^a-z]/gi, " ");
 
     setName(result);
+  };
+
+  const handleSender = async () => {
+    try {
+      await axios.post("http://localhost:5000/contacts", {
+        name,
+        email,
+        phoneNumber,
+        message
+      });
+      console.log("login success");
+      custom_alert();
+    } catch (error) {
+      console.log("terjadi error signup");
+      if (error.response && error.response.data) {
+      } else {
+      }
+      error_alert();
+    }
   };
 
   const handleChangePhone = (e) => {
@@ -86,11 +117,11 @@ function Contact() {
             </div>
             <form action="" className="grid-container">
               <input type="text" id="name" placeholder="Your Name :" data-type="data" value={name} onChange={handleChangeName} className="name" />
-              <input type="text" id="mail" placeholder="Your Mail :" className="mail" />
-              <input type="text" id="tlp" placeholder="Your Phone :" className="tlp" value={phone} onChange={handleChangePhone} />
-              <textarea name="message" id="message" className="message" cols="30" rows="10" placeholder="Your Message :"></textarea>
+              <input type="text" id="mail" placeholder="Your Mail :" className="mail"  value={email} onChange={(e) => setEmail(e.target.value)}/>
+              <input type="text" id="tlp" placeholder="Your Phone :" className="tlp" value={phoneNumber} onChange={handleChangePhone} />
+              <textarea name="message" id="message" className="message" cols="30" rows="10" placeholder="Your Message :" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
             </form>
-            <button href="#" onClick={custom_alert} className="send_button">
+            <button href="#" onClick={handleSender} className="send_button">
               SEND MESSAGE
             </button>
           </div>

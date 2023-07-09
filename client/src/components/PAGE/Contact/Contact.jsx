@@ -1,6 +1,6 @@
 // import { useRef } from "react";
 import "./Contact.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Swal from "sweetalert2";
 
 function custom_alert(e) {
@@ -38,9 +38,9 @@ function Contact() {
   return (
     <>
       <div className="bg_button_contact">
-        <a className="button_contact" href=" ">
+        <div className="button_contact" href=" ">
           Contact Us
-        </a>
+        </div>
       </div>
       <div className="container">
         <div className="wrapper">
@@ -53,7 +53,7 @@ function Contact() {
                 <div className="text">
                   <h3>CONTACT US</h3>
                   <p>
-                    web123@gmail.com
+                    sugeng@gmail.com
                     <br />
                     089542624923
                   </p>
@@ -90,9 +90,9 @@ function Contact() {
               <input type="text" id="tlp" placeholder="Your Phone :" className="tlp" value={phone} onChange={handleChangePhone} />
               <textarea name="message" id="message" className="message" cols="30" rows="10" placeholder="Your Message :"></textarea>
             </form>
-            <butto1 href="#" onClick={custom_alert} className="send_button">
+            <button href="#" onClick={custom_alert} className="send_button">
               SEND MESSAGE
-            </butto1>
+            </button>
           </div>
           <div className="maps">
             <h1>Maps</h1>

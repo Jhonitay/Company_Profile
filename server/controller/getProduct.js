@@ -1,6 +1,6 @@
 const { Product} = require("../models");
 
-const  getProduct = async (req, res) => {
+const getProduct = async (req, res) => {
   console.log("Request profile received!");
 
 
@@ -30,7 +30,7 @@ const  getProduct = async (req, res) => {
     },
   };
   console.log(response);
-  return res.status(200).json(response);
+  return res.status(200).json(response); 
 };
 
 module.exports = { getProduct } ;

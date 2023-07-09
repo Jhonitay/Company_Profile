@@ -1,7 +1,9 @@
 const express =  require("express");
 // const newRoute =  require("./routes/newRoute.js");
-const { router } =  require("./routes/withlogin.js");
+const withLogin =  require("./routes/withlogin");
+const noLogin = require("./routes/noLogin")
 const cors = require("cors");
+const { verifyToken } = require("./controller/verify");
 const app = express();
 
 // try {
@@ -23,7 +25,12 @@ app.get("/test", (req, res) => {
   console.log(req.body)
   res.send("Test route");
 });
- app.use(router);
+
+app.use(noLogin)
+
+app.use(verifyToken)
+
+app.use(withLogin)
 
 
 app.get("/about", (req, res) => {

@@ -20,10 +20,10 @@ function Footer() {
           <div className="bawahan">
             <div className="coffie">coffiee</div>
             <div className="sosmed">
-              <FaFacebook className="icons" />
-              <FaInstagram className="icons" />
-              <FaTwitter className="icons" />
-              <FaWhatsapp className="icons" />
+              <FaFacebook className="iconss" />
+              <FaInstagram className="iconss" />
+              <FaTwitter className="iconss" />
+              <FaWhatsapp className="iconss" />
             </div>
           </div>
         </div>
